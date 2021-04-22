@@ -15,6 +15,7 @@ import com.app.ista.service.CentroMedicoService;
 @RequestMapping("/centroMedico")
 @CrossOrigin(origins = "*")
 public class CentroMedicoController {
+	
 	@Autowired
 	CentroMedicoService centroMedicoService;
 	

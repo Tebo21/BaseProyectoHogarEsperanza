@@ -30,7 +30,6 @@ public class FichaSocioeconomica {
 			String tipoVivienda, String descripcionVivienda, String seguro, boolean discapacidad,
 			String discapacidadDescipcion, String nacionalidad, String estadoCivil, double salario, Date fechaRegistro,
 			boolean adultoMayor, boolean viveConOtros) {
-		super();
 		this.idFichaSocioeconomica = idFichaSocioeconomica;
 		this.cedulaPersona = cedulaPersona;
 		this.situacionEconomica = situacionEconomica;

@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import com.app.ista.model.CitasMedicas;
 import com.app.ista.repository.CitasMedicasRepository;
 
-
-
 @Service
 public class CitasMedicasService {
 	
