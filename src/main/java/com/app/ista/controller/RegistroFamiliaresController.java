@@ -8,21 +8,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.ista.model.ActividadPersona;
-import com.app.ista.service.ActividadPersonaService;
+import com.app.ista.model.RegistroFamliares;
+import com.app.ista.service.RegistroFamiliaresService;
 
 @RestController
-@RequestMapping("/actividadPersona")
+@RequestMapping("/registroFamiliares")
 @CrossOrigin(origins = "*")
-public class ActividadPersonaController {
-
-		@Autowired
-		ActividadPersonaService actividadPersonaService;
-		
-		@PostMapping
-	    public ResponseEntity<String> guardarActividadPersona(@RequestBody ActividadPersona actividadPersona) {
-			actividadPersonaService.guardarActividadPersona(actividadPersona);
-	        return ResponseEntity.ok("OK");
-	    }
+public class RegistroFamiliaresController {
+	@Autowired
+	RegistroFamiliaresService regisfamser;
 	
+	@PostMapping
+    public ResponseEntity<String> guardarRegistroFamiliares(@RequestBody RegistroFamliares registrofamiliares) {
+		regisfamser.guardarRegistroFamiliares(registrofamiliares);
+        return ResponseEntity.ok("OK");
+    }
 }

@@ -8,21 +8,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.ista.model.ActividadPersona;
-import com.app.ista.service.ActividadPersonaService;
+import com.app.ista.model.Especialidad;
+import com.app.ista.service.EspecialidadService;
 
 @RestController
-@RequestMapping("/actividadPersona")
+@RequestMapping("/especialidad")
 @CrossOrigin(origins = "*")
-public class ActividadPersonaController {
-
-		@Autowired
-		ActividadPersonaService actividadPersonaService;
-		
-		@PostMapping
-	    public ResponseEntity<String> guardarActividadPersona(@RequestBody ActividadPersona actividadPersona) {
-			actividadPersonaService.guardarActividadPersona(actividadPersona);
-	        return ResponseEntity.ok("OK");
-	    }
+public class EspecialidadController {
+	@Autowired
+	EspecialidadService espeser;
 	
+	@PostMapping
+    public ResponseEntity<String> guardarEspecialidad(@RequestBody Especialidad especialidad) {
+		espeser.guardarEspecialidad(especialidad);
+        return ResponseEntity.ok("OK");
+    }
 }
