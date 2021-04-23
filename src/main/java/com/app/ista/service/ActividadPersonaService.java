@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,10 @@ public class ActividadPersonaService {
         	actividadPersona.setIdActividadPersona(actividadPersonaRepository.id().get(0).getIdActividadPersona()+ 1);
         }
 		return actividadPersonaRepository.save(actividadPersona);
+	}
+	
+	public List<ActividadPersona>listarActividadesPersona(){
+		return actividadPersonaRepository.findAll();
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +22,9 @@ public class UsuarioService {
         	usuario.setIdUsuario(usuarioRepository.id().get(0).getIdUsuario()+ 1);
         }
         return usuarioRepository.save(usuario);
+	}
+	
+	public List<Usuarios>listarUsuarios(){
+		return usuarioRepository.findAll();
 	}
 }

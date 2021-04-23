@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,10 @@ public class CentroMedicoService {
         	centroMedico.setIdCentroMedico(centroMedicoRepository.id().get(0).getIdCentroMedico()+ 1);
         }
         return centroMedicoRepository.save(centroMedico);
+	}
+	
+	public List<CentroMedico>listarCentroMedico(){
+		return centroMedicoRepository.findAll();
 	}
 
 }

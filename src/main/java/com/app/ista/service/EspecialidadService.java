@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,9 @@ public class EspecialidadService {
 			especialidad.setIdEspecialidad(especiarepo.id().get(0).getIdEspecialidad() + 1);
 		}
 		return especiarepo.save(especialidad);
+	}
+	
+	public List<Especialidad>listarEspecialidad(){
+		return especiarepo.findAll();
 	}
 }

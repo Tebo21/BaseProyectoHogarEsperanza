@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,10 @@ public class CitasMedicasService {
         	citasMedicas.setIdCitasMedicas(citasMedicasRepository.id().get(0).getIdCitasMedicas()+ 1);
         }
         return citasMedicasRepository.save(citasMedicas);
+	}
+	
+	public List<CitasMedicas>listarCitasMedicas(){
+		return citasMedicasRepository.findAll();
 	}
 
 }

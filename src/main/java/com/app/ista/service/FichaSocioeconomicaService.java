@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,9 @@ public class FichaSocioeconomicaService {
         	fichaSocioeconomica.setIdFichaSocioeconomica(fichaSocioeconomicaRepository.id().get(0).getIdFichaSocioeconomica()+ 1);
         }
         return fichaSocioeconomicaRepository.save(fichaSocioeconomica);
+	}
+	
+	public List<FichaSocioeconomica>listarFichas(){
+		return fichaSocioeconomicaRepository.findAll();
 	}
 }
