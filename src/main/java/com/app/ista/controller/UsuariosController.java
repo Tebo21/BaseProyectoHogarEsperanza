@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.ista.model.Persona;
 import com.app.ista.model.Usuarios;
 import com.app.ista.service.UsuarioService;
 

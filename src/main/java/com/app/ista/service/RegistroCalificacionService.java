@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,9 @@ public class RegistroCalificacionService {
 			registrocalificacion.setIdRegistroCalificacion(regiscalifrepo.id().get(0).getIdRegistroCalificacion() + 1);
 		}
 		return regiscalifrepo.save(registrocalificacion);
+	}
+	
+	public List<RegistroCalificacion>listadoRegistroCalificaciones(){
+		return regiscalifrepo.findAll();
 	}
 }

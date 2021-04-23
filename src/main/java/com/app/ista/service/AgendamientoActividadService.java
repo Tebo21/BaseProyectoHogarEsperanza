@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +22,8 @@ public class AgendamientoActividadService {
         }
 		return agendaactivirepo.save(agendamientoactividad);
 	}
-
+	
+	public List<AgendamientoActividad> listarAgendamientoActividad(){
+		return agendaactivirepo.findAll();
+	}
 }

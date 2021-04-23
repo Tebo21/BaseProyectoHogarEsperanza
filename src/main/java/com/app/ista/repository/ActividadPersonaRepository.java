@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.app.ista.model.ActividadPersona;
-import com.app.ista.model.Usuarios;
 
 @Repository
 public interface ActividadPersonaRepository extends MongoRepository<ActividadPersona,Long> {

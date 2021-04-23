@@ -3,8 +3,6 @@ package com.app.ista.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.Data;
-
 //Spring create a collection in MongoDB 
 @Document(collection = "centroMedico")
 public class CentroMedico {

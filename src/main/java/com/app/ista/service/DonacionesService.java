@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +20,9 @@ public class DonacionesService {
 			donaciones.setIdDonacion(donacrepo.id().get(0).getIdDonacion() + 1);
 		}
 		return donacrepo.save(donaciones);
+	}
+	
+	public List<Donaciones>listadoDonaciones(){
+		return donacrepo.findAll();
 	}
 }

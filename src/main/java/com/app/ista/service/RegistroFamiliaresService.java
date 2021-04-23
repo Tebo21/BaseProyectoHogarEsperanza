@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,9 @@ public class RegistroFamiliaresService {
 			registrofamiliares.setIdRegistroFamiliares(regisfamrepo.id().get(0).getIdRegistroFamiliares() + 1);
 		}
 		return regisfamrepo.save(registrofamiliares);
+	}
+	
+	public List<RegistroFamliares>listadoRegistroFamiliares(){
+		return regisfamrepo.findAll();
 	}
 }
