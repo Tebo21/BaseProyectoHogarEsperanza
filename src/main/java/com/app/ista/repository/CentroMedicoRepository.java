@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.app.ista.model.CentroMedico;
 
 @Repository
-public interface CentroMedicoRepository extends MongoRepository<CentroMedico, String>{
+public interface CentroMedicoRepository extends MongoRepository<CentroMedico, Long>{
 
 	@Query(value = "{},{idCentroMedico:1}", sort = "{_id: -1}")
     List<CentroMedico> id();

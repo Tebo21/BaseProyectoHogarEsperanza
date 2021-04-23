@@ -10,7 +10,7 @@ import com.app.ista.model.ActividadPersona;
 import com.app.ista.model.Usuarios;
 
 @Repository
-public interface ActividadPersonaRepository extends MongoRepository<ActividadPersona,String> {
+public interface ActividadPersonaRepository extends MongoRepository<ActividadPersona,Long> {
 
 	@Query(value = "{},{idActividadPersona:1}", sort = "{_id: -1}")
     List<ActividadPersona> id();

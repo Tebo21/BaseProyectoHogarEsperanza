@@ -10,7 +10,7 @@ import com.app.ista.model.CitasMedicas;
 
 
 @Repository
-public interface CitasMedicasRepository extends MongoRepository<CitasMedicas, String> {
+public interface CitasMedicasRepository extends MongoRepository<CitasMedicas, Long> {
 
 	@Query(value = "{},{idCitasMedicas:1}", sort = "{_id: -1}")
     List<CitasMedicas> id();

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.app.ista.model.FichaSocioeconomica;
 
 @Repository
-public interface FichaSocioeconomicaRepository extends MongoRepository<FichaSocioeconomica, String>{
+public interface FichaSocioeconomicaRepository extends MongoRepository<FichaSocioeconomica, Long>{
 
 	@Query(value = "{},{idFichaSocioeconomica:1}", sort = "{_id: -1}")
     List<FichaSocioeconomica> id();
