@@ -19,19 +19,18 @@ import com.app.ista.service.ActividadPersonaService;
 @CrossOrigin(origins = "*")
 public class ActividadPersonaController {
 
-		@Autowired
-		ActividadPersonaService actividadPersonaService;
-		
-		@PostMapping
-	    public ResponseEntity<String> guardarActividadPersona(@RequestBody ActividadPersona actividadPersona) {
-			actividadPersonaService.guardarActividadPersona(actividadPersona);
-	        return ResponseEntity.ok("OK");
-	    }
+	@Autowired
+	ActividadPersonaService actividadPersonaService;
 
-		
-		@GetMapping(path = "/listadoActividadesPersona", produces = "application/json")
-		public List<ActividadPersona>listarActividadesPersona(){
-			return actividadPersonaService.listarActividadesPersona();
-			
-		}
+	@PostMapping
+	public ResponseEntity<String> guardarActividadPersona(@RequestBody ActividadPersona actividadPersona) {
+		actividadPersonaService.guardarActividadPersona(actividadPersona);
+		return ResponseEntity.ok("OK");
+	}
+
+	@GetMapping(path = "/listadoActividadesPersona", produces = "application/json")
+	public List<ActividadPersona> listarActividadesPersona() {
+		return actividadPersonaService.listarActividadesPersona();
+
+	}
 }
