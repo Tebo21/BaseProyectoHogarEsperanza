@@ -27,6 +27,7 @@ public class ActividadPersonaController {
 			actividadPersonaService.guardarActividadPersona(actividadPersona);
 	        return ResponseEntity.ok("OK");
 	    }
+
 		
 		@GetMapping(path = "/listadoActividadesPersona", produces = "application/json")
 		public List<ActividadPersona>listarActividadesPersona(){
