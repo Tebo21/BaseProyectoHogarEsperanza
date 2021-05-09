@@ -14,6 +14,8 @@ public class Usuarios {
 	private String contrasenia;
 	private String correoPersona;
 	private List<String> tipoUsuario;
+	
+	public Usuarios() {	}
 
 	public Usuarios(int idUsuario, String nombreUsuario, String contrasenia, String correoPersona,
 			List<String> tipoUsuario) {
