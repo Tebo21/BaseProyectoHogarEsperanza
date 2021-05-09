@@ -21,4 +21,8 @@ public class PersonaService {
 	public List<Persona> listarPersonas() {
         return personaRepository.findAll();
     }
+	
+	public Persona recuperarPorCorreo(String correoPersona){
+		return personaRepository.findByCorreo(correoPersona);
+	}
 }

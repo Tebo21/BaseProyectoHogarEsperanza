@@ -27,4 +27,8 @@ public class UsuarioService {
 	public List<Usuarios>listarUsuarios(){
 		return usuarioRepository.findAll();
 	}
+	
+	public Usuarios iniciarSesion(String nombreUsuario, String contrasenia) {
+		return usuarioRepository.findByNombreUsuarioAndContrasenia(nombreUsuario, contrasenia);
+	}
 }
