@@ -31,6 +31,5 @@ public class ActividadPersonaController {
 	@GetMapping(path = "/listadoActividadesPersona", produces = "application/json")
 	public List<ActividadPersona> listarActividadesPersona() {
 		return actividadPersonaService.listarActividadesPersona();
-
 	}
 }
