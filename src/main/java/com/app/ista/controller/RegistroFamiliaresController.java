@@ -21,7 +21,7 @@ public class RegistroFamiliaresController {
 	@Autowired
 	RegistroFamiliaresService regisfamser;
 	
-	@PostMapping
+	@PostMapping(value = "/addfamiliares")
     public ResponseEntity<String> guardarRegistroFamiliares(@RequestBody RegistroFamliares registrofamiliares) {
 		regisfamser.guardarRegistroFamiliares(registrofamiliares);
         return ResponseEntity.ok("OK");

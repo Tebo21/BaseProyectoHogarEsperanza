@@ -23,7 +23,7 @@ public class PersonaController {
 	@Autowired
 	PersonaService personaService;
 
-	@PostMapping(value = "/creadPerosna")
+	@PostMapping(value = "/crearPersona")
 	public ResponseEntity<String> guardarPersona(@RequestBody Persona persona) {
 		personaService.guardarPersona(persona);
 		return ResponseEntity.ok("OK");
