@@ -22,10 +22,10 @@ public class DonacionesController {
 	@Autowired
 	DonacionesService donacserv;
 	
-	@PostMapping
-    public ResponseEntity<String> guardarDonacion(@RequestBody Donaciones donaciones) {
-		donacserv.guardarDonacion(donaciones);
-        return ResponseEntity.ok("OK");
+	@PostMapping(path = "/", produces = "application/json")
+    public Donaciones guardarDonacion(@RequestBody Donaciones donaciones) {
+		return donacserv.guardarDonacion(donaciones);
+        
     }
 
 	@GetMapping(path = "/listadoDonaciones", produces = "application/json")

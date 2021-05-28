@@ -1,7 +1,6 @@
 package com.app.ista.model;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,12 +12,12 @@ public class Donaciones {
 	private int idDonacion;
 	private String nombreDonacion;
 	private int cantidad;
-	private List<String> categoria;
+	private String categoria;
 	private Date fechaDonacion;
 	private String descripcionDonacion;
 	private String cedulaPersona;
 	
-	public Donaciones(int idDonacion, String nombreDonacion, int cantidad, List<String> categoria, Date fechaDonacion,
+	public Donaciones(int idDonacion, String nombreDonacion, int cantidad, String categoria, Date fechaDonacion,
 			String descripcionDonacion, String cedulaPersona) {
 		this.idDonacion = idDonacion;
 		this.nombreDonacion = nombreDonacion;
@@ -53,11 +52,11 @@ public class Donaciones {
 		this.cantidad = cantidad;
 	}
 
-	public List<String> getCategoria() {
+	public String getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(List<String> categoria) {
+	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
 
