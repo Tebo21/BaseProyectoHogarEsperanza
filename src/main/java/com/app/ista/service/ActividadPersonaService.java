@@ -12,7 +12,7 @@ import com.app.ista.repository.ActividadPersonaRepository;
 public class ActividadPersonaService {
 	
 	@Autowired
-	private ActividadPersonaRepository actividadPersonaRepository;
+	ActividadPersonaRepository actividadPersonaRepository;
 	
 	public ActividadPersona guardarActividadPersona(ActividadPersona actividadPersona) {
 		if (actividadPersonaRepository.findAll().isEmpty()) {
