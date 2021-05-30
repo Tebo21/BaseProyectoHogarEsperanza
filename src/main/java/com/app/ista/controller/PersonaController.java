@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,4 +40,8 @@ public class PersonaController {
 		return personaService.recuperarPorCorreo(correoPersona);
 	}
 
+	@GetMapping(path = "/bycedula/{cedula}", produces = "application/json")
+	public Persona porCedula(@PathVariable String cedula) {
+		return personaService.porCedula(cedula);
+	}
 }

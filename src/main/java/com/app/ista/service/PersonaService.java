@@ -25,4 +25,8 @@ public class PersonaService {
 	public Persona recuperarPorCorreo(String correoPersona){
 		return personaRepository.findByCorreo(correoPersona);
 	}
+
+	public Persona porCedula(String cedula){
+		return personaRepository.findByCedula(cedula);
+	}
 }
