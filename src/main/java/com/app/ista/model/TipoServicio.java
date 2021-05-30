@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "TipoActividad")
 public class TipoServicio {
-    
+    //Esta colleccion es para el tipo de actividad en las actividades 
     @Id
     private int idTipoActividad;
     private String nombreActividad;
