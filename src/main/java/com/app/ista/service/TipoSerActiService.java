@@ -25,4 +25,8 @@ public class TipoSerActiService {
     public List<TipoServicio>listarAll(){
 		return TpoActividadRepo.findAll();
 	}
+
+  public TipoServicio byNombreActi(String nombreActividad){
+		return TpoActividadRepo.findByNombreActividad(nombreActividad);
+	}
 }

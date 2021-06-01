@@ -13,5 +13,5 @@ public interface ActividadPersonaRepository extends MongoRepository<ActividadPer
 
 	@Query(value = "{},{idActividadPersona:1}", sort = "{_id: -1}")
     List<ActividadPersona> id();
-
+    
 }
