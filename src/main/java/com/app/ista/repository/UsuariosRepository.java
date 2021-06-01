@@ -14,5 +14,6 @@ public interface UsuariosRepository extends MongoRepository<Usuarios, Long>{
 	@Query(value = "{},{idUsuario:1}", sort = "{_id: -1}")
     List<Usuarios> id();
 
-	Usuarios findByNombreUsuarioAndContrasenia(String nombreUsuario, String contrasenia);
+	Usuarios findByUsuarioCedulaAndUsuarioContraseniaAndUsuarioTipo(String usuarioCedula, String usuarioContrasenia, int usuarioTipo);
+	
 }

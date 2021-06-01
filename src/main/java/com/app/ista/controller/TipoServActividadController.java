@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,5 +33,10 @@ public class TipoServActividadController {
     @GetMapping(path = "/listadoTipoAct", produces = "application/json")
 	public List<TipoServicio> listarActividadesPersona() {
 		return TipoActiService.listarAll();
+	}
+
+    @GetMapping(path = "/bynombre/{nombreActividad}", produces = "application/json")
+	public TipoServicio porNombre(@PathVariable String nombreActividad) {
+		return TipoActiService.byNombreActi(nombreActividad);
 	}
 }

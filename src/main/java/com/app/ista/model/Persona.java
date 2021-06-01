@@ -19,10 +19,12 @@ public class Persona {
 	private String genero;
 	private Date fechaNacimiento;
 	private int edad;
-	private String tipoPersona;
+	private String nacionalidad;
+	private String discapacidad;
+	private String estado_civil;
 	
 	public Persona(String cedula, String nombres, String apellidos, String direccion, String celular, String correo,
-			String genero, Date fechaNacimiento, int edad, String tipoPersona) {
+			String genero, Date fechaNacimiento, int edad, String nacionalidad, String discapacidad, String estado_civil) {
 		this.cedula = cedula;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
@@ -32,7 +34,9 @@ public class Persona {
 		this.genero = genero;
 		this.fechaNacimiento = fechaNacimiento;
 		this.edad = edad;
-		this.tipoPersona = tipoPersona;
+		this.nacionalidad=nacionalidad;
+		this.discapacidad=discapacidad;
+		this.estado_civil=estado_civil;
 	}
 
 	public String getCedula() {
@@ -107,14 +111,27 @@ public class Persona {
 		this.edad = edad;
 	}
 
-	public String getTipoPersona() {
-		return tipoPersona;
+	public String getnacionalidad(){
+		return nacionalidad;
 	}
 
-	public void setTipoPersona(String tipoPersona) {
-		this.tipoPersona = tipoPersona;
+	public void setNacionalidad(String nacionalidad){
+		this.nacionalidad=nacionalidad;
 	}
-	
-	
-	
+
+	public String getdiscapacidad(){
+		return discapacidad;
+	}
+
+	public void setDiscapacidad(String nacionalidad){
+		this.nacionalidad=nacionalidad;
+	}
+
+	public String getestado_civil(){
+		return estado_civil;
+	}
+
+	public void setEstadoCivil(String estado_civil){
+		this.estado_civil=estado_civil;
+	}
 }

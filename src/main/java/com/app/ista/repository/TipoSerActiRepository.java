@@ -13,4 +13,6 @@ public interface TipoSerActiRepository extends MongoRepository<TipoServicio, Lon
     
     @Query(value = "{},{idTipoActividad:1}", sort = "{_id: -1}")
     List<TipoServicio> id();
+
+    TipoServicio findByNombreActividad(String nombreActividad);
 }

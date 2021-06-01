@@ -16,4 +16,5 @@ public interface ActividadPersonaRepository extends MongoRepository<ActividadPer
 
     ActividadPersona findByIdActividadPersona(int idActividadPersona );
 
+    
 }
