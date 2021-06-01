@@ -34,8 +34,9 @@ public class UsuariosController {
 	}
 
 	@GetMapping("/login-usuario")
-	public Usuarios login(@RequestParam("usuarioCedula") String usuarioCedula, @RequestParam("usuarioContrasenia") String usuarioContrasenia) {
-		Usuarios usuario = usuarioService.iniciarSesion(usuarioCedula, usuarioContrasenia);
+	public Usuarios login(@RequestParam("usuarioCedula") String usuarioCedula, @RequestParam("usuarioContrasenia") String usuarioContrasenia,
+			@RequestParam("usuarioTipo") int usuarioTipo) {
+		Usuarios usuario = usuarioService.iniciarSesion(usuarioCedula, usuarioContrasenia, usuarioTipo);
 		if (usuario != null) {
 			return usuario;
 		}

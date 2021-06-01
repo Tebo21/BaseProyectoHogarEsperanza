@@ -28,7 +28,7 @@ public class UsuarioService {
 		return usuarioRepository.findAll();
 	}
 	
-	public Usuarios iniciarSesion(String usuarioCedula, String usuarioContrasenia) {
-		return usuarioRepository.findByUsuarioCedulaAndUsuarioContrasenia(usuarioCedula, usuarioContrasenia);
+	public Usuarios iniciarSesion(String usuarioCedula, String usuarioContrasenia, int usuarioTipo) {
+		return usuarioRepository.findByUsuarioCedulaAndUsuarioContraseniaAndUsuarioTipo(usuarioCedula, usuarioContrasenia, usuarioTipo);
 	}
 }
