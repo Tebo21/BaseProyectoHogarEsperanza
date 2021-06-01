@@ -14,18 +14,18 @@ public class Usuarios {
 	private String usuarioNombre;
 	private String usuarioContrasenia;
 	private String usuarioEmail;
-	private int usarioTipo;
+	private int usuarioTipo;
 	 
 	public Usuarios() {	}
 
 	public Usuarios(int idUsuario, String usuarioCedula, String usuarioNombre, String usuarioContrasenia,
-			String usuarioEmail, int usarioTipo) {
+			String usuarioEmail, int usuarioTipo) {
 		this.idUsuario = idUsuario;
 		this.usuarioCedula = usuarioCedula;
 		this.usuarioNombre = usuarioNombre;
 		this.usuarioContrasenia = usuarioContrasenia;
 		this.usuarioEmail = usuarioEmail;
-		this.usarioTipo = usarioTipo;
+		this.usuarioTipo = usuarioTipo;
 	}
 
 	public int getIdUsuario() {
@@ -68,12 +68,12 @@ public class Usuarios {
 		this.usuarioEmail = usuarioEmail;
 	}
 
-	public int getUsarioTipo() {
-		return usarioTipo;
+	public int getUsuarioTipo() {
+		return usuarioTipo;
 	}
 
-	public void setUsarioTipo(int usarioTipo) {
-		this.usarioTipo = usarioTipo;
+	public void setUsuarioTipo(int usuarioTipo) {
+		this.usuarioTipo = usuarioTipo;
 	}
 
 }
