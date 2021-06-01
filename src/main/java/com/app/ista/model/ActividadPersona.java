@@ -12,8 +12,8 @@ public class ActividadPersona {
 	private int idActividadPersona;
 	private Persona cedulaPersona;
 	private Date fechaActividad;
-	private Date horaInicio;
-	private Date horaFin;
+	private String horaInicio;
+	private String horaFin;
 	private String descripcionActividad;
 	private TipoServicio tipoActividad;
 
@@ -22,7 +22,7 @@ public class ActividadPersona {
 	}
 
 
-	public ActividadPersona(int idActividadPersona, Persona cedulaPersona, Date fechaActividad, Date horaInicio, Date horaFin, String descripcionActividad, TipoServicio tipoActividad) {
+	public ActividadPersona(int idActividadPersona, Persona cedulaPersona, Date fechaActividad, String horaInicio, String horaFin, String descripcionActividad, TipoServicio tipoActividad) {
 		this.idActividadPersona = idActividadPersona;
 		this.cedulaPersona = cedulaPersona;
 		this.fechaActividad = fechaActividad;
@@ -32,23 +32,23 @@ public class ActividadPersona {
 		this.tipoActividad = tipoActividad;
 	}
 
+	
 
-	public Date getHoraInicio() {
+	public String getHoraInicio() {
 		return this.horaInicio;
 	}
 
-	public void setHoraInicio(Date horaInicio) {
+	public void setHoraInicio(String horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 
-	public Date getHoraFin() {
+	public String getHoraFin() {
 		return this.horaFin;
 	}
 
-	public void setHoraFin(Date horaFin) {
+	public void setHoraFin(String horaFin) {
 		this.horaFin = horaFin;
 	}
-
 
 	public Persona getCedulaPersona() {
 		return this.cedulaPersona;
