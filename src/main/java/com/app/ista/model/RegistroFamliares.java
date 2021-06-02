@@ -12,9 +12,9 @@ public class RegistroFamliares {
 	private int idRegistroFamiliares;
 	private String cedulaPersona;
 	private int numHijos;
-	private List<String> hijos;
+	private List<Object> hijos;
 	
-	public RegistroFamliares(int idRegistroFamiliares, String cedulaPersona, int numHijos, List<String> hijos) {
+	public RegistroFamliares(int idRegistroFamiliares, String cedulaPersona, int numHijos, List<Object> hijos) {
 		this.idRegistroFamiliares = idRegistroFamiliares;
 		this.cedulaPersona = cedulaPersona;
 		this.numHijos = numHijos;
@@ -45,11 +45,11 @@ public class RegistroFamliares {
 		this.numHijos = numHijos;
 	}
 
-	public List<String> getHijos() {
+	public List<Object> getHijos() {
 		return hijos;
 	}
 
-	public void setHijos(List<String> hijos) {
+	public void setHijos(List<Object> hijos) {
 		this.hijos = hijos;
 	}
 	

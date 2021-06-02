@@ -1,8 +1,6 @@
 package com.app.ista.model;
 
 import java.util.Date;
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,19 +10,54 @@ public class ActividadPersona {
 
 	@Id
 	private int idActividadPersona;
-	private String cedulaPersona;
+	private Persona cedulaPersona;
 	private Date fechaActividad;
+	private String horaInicio;
+	private String horaFin;
 	private String descripcionActividad;
-	private List<String> tipoActividad;
+	private TipoServicio tipoActividad;
 
-	public ActividadPersona(int idActividadPersona, String cedulaPersona, Date fechaActividad,
-			String descripcionActividad, List<String> tipoActividad) {
+
+	public ActividadPersona() {
+	}
+
+
+	public ActividadPersona(int idActividadPersona, Persona cedulaPersona, Date fechaActividad, String horaInicio, String horaFin, String descripcionActividad, TipoServicio tipoActividad) {
 		this.idActividadPersona = idActividadPersona;
 		this.cedulaPersona = cedulaPersona;
 		this.fechaActividad = fechaActividad;
+		this.horaInicio = horaInicio;
+		this.horaFin = horaFin;
 		this.descripcionActividad = descripcionActividad;
 		this.tipoActividad = tipoActividad;
 	}
+
+	
+
+	public String getHoraInicio() {
+		return this.horaInicio;
+	}
+
+	public void setHoraInicio(String horaInicio) {
+		this.horaInicio = horaInicio;
+	}
+
+	public String getHoraFin() {
+		return this.horaFin;
+	}
+
+	public void setHoraFin(String horaFin) {
+		this.horaFin = horaFin;
+	}
+
+	public Persona getCedulaPersona() {
+		return this.cedulaPersona;
+	}
+
+	public void setCedulaPersona(Persona cedulaPersona) {
+		this.cedulaPersona = cedulaPersona;
+	}
+
 
 	public int getIdActividadPersona() {
 		return idActividadPersona;
@@ -32,14 +65,6 @@ public class ActividadPersona {
 
 	public void setIdActividadPersona(int idActividadPersona) {
 		this.idActividadPersona = idActividadPersona;
-	}
-
-	public String getCedulaPersona() {
-		return cedulaPersona;
-	}
-
-	public void setCedulaPersona(String cedulaPersona) {
-		this.cedulaPersona = cedulaPersona;
 	}
 
 	public Date getFechaActividad() {
@@ -58,12 +83,14 @@ public class ActividadPersona {
 		this.descripcionActividad = descripcionActividad;
 	}
 
-	public List<String> getTipoActividad() {
-		return tipoActividad;
+
+	public TipoServicio getTipoActividad() {
+		return this.tipoActividad;
 	}
 
-	public void setTipoActividad(List<String> tipoActividad) {
+	public void setTipoActividad(TipoServicio tipoActividad) {
 		this.tipoActividad = tipoActividad;
 	}
+
 
 }

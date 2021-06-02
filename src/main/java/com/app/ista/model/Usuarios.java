@@ -1,28 +1,21 @@
 package com.app.ista.model;
 
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 //Spring create a collection in MongoDB 
 @Document(collection = "usuarios")
 public class Usuarios {
+	
 	@Id
 	private int idUsuario;
-	private String nombreUsuario;
-	private String contrasenia;
-	private String correoPersona;
-	private List<String> tipoUsuario;
-
-	public Usuarios(int idUsuario, String nombreUsuario, String contrasenia, String correoPersona,
-			List<String> tipoUsuario) {
-		this.idUsuario = idUsuario;
-		this.nombreUsuario = nombreUsuario;
-		this.contrasenia = contrasenia;
-		this.correoPersona = correoPersona;
-		this.tipoUsuario = tipoUsuario;
-	}
+	
+	private String usuarioCedula;
+	private String usuarioNombre;
+	private String usuarioContrasenia;
+	private int usuarioTipo;
+	 
+	public Usuarios() {	}
 
 	public int getIdUsuario() {
 		return idUsuario;
@@ -32,36 +25,38 @@ public class Usuarios {
 		this.idUsuario = idUsuario;
 	}
 
-	public String getNombreUsuario() {
-		return nombreUsuario;
+	public String getUsuarioCedula() {
+		return usuarioCedula;
 	}
 
-	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
+	public void setUsuarioCedula(String usuarioCedula) {
+		this.usuarioCedula = usuarioCedula;
 	}
 
-	public String getContrasenia() {
-		return contrasenia;
+	public String getUsuarioNombre() {
+		return usuarioNombre;
 	}
 
-	public void setContrasenia(String contrasenia) {
-		this.contrasenia = contrasenia;
+	public void setUsuarioNombre(String usuarioNombre) {
+		this.usuarioNombre = usuarioNombre;
 	}
 
-	public String getCorreoPersona() {
-		return correoPersona;
+	public String getUsuarioContrasenia() {
+		return usuarioContrasenia;
 	}
 
-	public void setCorreoPersona(String correoPersona) {
-		this.correoPersona = correoPersona;
+	public void setUsuarioContrasenia(String usuarioContrasenia) {
+		this.usuarioContrasenia = usuarioContrasenia;
 	}
 
-	public List<String> getTipoUsuario() {
-		return tipoUsuario;
+	public int getUsuarioTipo() {
+		return usuarioTipo;
 	}
 
-	public void setTipoUsuario(List<String> tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
+	public void setUsuarioTipo(int usuarioTipo) {
+		this.usuarioTipo = usuarioTipo;
 	}
+
+	
 
 }

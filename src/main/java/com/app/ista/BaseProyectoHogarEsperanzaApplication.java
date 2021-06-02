@@ -11,5 +11,4 @@ public class BaseProyectoHogarEsperanzaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BaseProyectoHogarEsperanzaApplication.class, args);
 	}
-
 }
