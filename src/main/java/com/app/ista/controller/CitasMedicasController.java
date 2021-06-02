@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.ista.model.CitasMedicas;
 import com.app.ista.service.CitasMedicasService;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/citasMedicas")
