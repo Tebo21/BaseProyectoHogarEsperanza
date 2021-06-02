@@ -1,6 +1,7 @@
 package com.app.ista.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,35 @@ public class DonacionesService {
 	
 	public List<Donaciones>listadoDonaciones(){
 		return donacrepo.findAll();
+	}
+	
+	public List<Donaciones> listaDoncionesByNombre(String nombreDonacion){
+		return donacrepo.findByNombreDonacion(nombreDonacion);
+	}
+	
+	public List<Donaciones> listaDonacionesByCategoria(String categoria){
+		return donacrepo.findByCategoria(categoria);
+	}
+	
+	public Optional<Donaciones> porId(Long idDonacion){
+		return donacrepo.findById(idDonacion);
+	}
+	
+	public Donaciones actualizaDonacion(Long idDonacion, Donaciones donaciones) {
+		if (donacrepo.findById(idDonacion)!=null){
+			donaciones.setIdDonacion(idDonacion.intValue());
+			return donacrepo.save(donaciones);
+		}else {
+			return null;
+		}
+	}
+	
+	public boolean eliminarDonacion(Long idDonacion) {
+		if (donacrepo.findById(idDonacion)!=null) {
+			donacrepo.deleteById(idDonacion);
+			return true;
+		}else {
+			return false;
+		}
 	}
 }
