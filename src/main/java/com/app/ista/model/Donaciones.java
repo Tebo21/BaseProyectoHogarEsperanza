@@ -17,8 +17,10 @@ public class Donaciones {
 	private String descripcionDonacion;
 	private String cedulaPersona;
 	
+	//private byte[] picByte;
+	
 	public Donaciones(int idDonacion, String nombreDonacion, int cantidad, String categoria, Date fechaDonacion,
-			String descripcionDonacion, String cedulaPersona) {
+			String descripcionDonacion, String cedulaPersona/*, byte[] picByte*/) {
 		this.idDonacion = idDonacion;
 		this.nombreDonacion = nombreDonacion;
 		this.cantidad = cantidad;
@@ -26,6 +28,7 @@ public class Donaciones {
 		this.fechaDonacion = fechaDonacion;
 		this.descripcionDonacion = descripcionDonacion;
 		this.cedulaPersona = cedulaPersona;
+		//this.picByte = picByte;
 	}
 
 	public int getIdDonacion() {
@@ -84,5 +87,6 @@ public class Donaciones {
 		this.cedulaPersona = cedulaPersona;
 	}
 
+	
 	
 }
