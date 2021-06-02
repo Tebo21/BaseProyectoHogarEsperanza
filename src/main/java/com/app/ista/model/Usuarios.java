@@ -13,20 +13,9 @@ public class Usuarios {
 	private String usuarioCedula;
 	private String usuarioNombre;
 	private String usuarioContrasenia;
-	private String usuarioEmail;
 	private int usuarioTipo;
 	 
 	public Usuarios() {	}
-
-	public Usuarios(int idUsuario, String usuarioCedula, String usuarioNombre, String usuarioContrasenia,
-			String usuarioEmail, int usuarioTipo) {
-		this.idUsuario = idUsuario;
-		this.usuarioCedula = usuarioCedula;
-		this.usuarioNombre = usuarioNombre;
-		this.usuarioContrasenia = usuarioContrasenia;
-		this.usuarioEmail = usuarioEmail;
-		this.usuarioTipo = usuarioTipo;
-	}
 
 	public int getIdUsuario() {
 		return idUsuario;
@@ -60,14 +49,6 @@ public class Usuarios {
 		this.usuarioContrasenia = usuarioContrasenia;
 	}
 
-	public String getUsuarioEmail() {
-		return usuarioEmail;
-	}
-
-	public void setUsuarioEmail(String usuarioEmail) {
-		this.usuarioEmail = usuarioEmail;
-	}
-
 	public int getUsuarioTipo() {
 		return usuarioTipo;
 	}
@@ -75,5 +56,7 @@ public class Usuarios {
 	public void setUsuarioTipo(int usuarioTipo) {
 		this.usuarioTipo = usuarioTipo;
 	}
+
+	
 
 }
