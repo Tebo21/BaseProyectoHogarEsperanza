@@ -16,20 +16,25 @@ import com.app.ista.service.CitasMedicasService;
 
 @RestController
 @RequestMapping("/citasMedicas")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CitasMedicasController {
 	
 	@Autowired
 	CitasMedicasService citasMedicasService;
 	
-	@PostMapping
-    public ResponseEntity<String> guardarCitaMedica(@RequestBody CitasMedicas citasMedicas) {
+	@PostMapping(path = "/guardar")
+	public ResponseEntity<String> guardarCentroMedico(@RequestBody CitasMedicas citasMedicas) {
 		citasMedicasService.guardarCitaMedica(citasMedicas);
-        return ResponseEntity.ok("OK");
+        return ResponseEntity.ok("Guardado Correctamente");
     }
 
-	@GetMapping(path = "/listadoCitasMedicas", produces = "application/json")
-	public List<CitasMedicas>listarCitasMedicas(){
+	@GetMapping(path = "/listar", produces = "application/json")
+	public List<CitasMedicas>listCitasMedicas(){
 		return citasMedicasService.listarCitasMedicas();
+	}
+
+	@DeleteMapping(path = "/eliminar")
+	public void deleteByIdCistasMe(@PathVariable (name = "citaMedica") Long citaMedica){
+		citasMedicasService.eliminarCitaMedica(citaMedica);
 	}
 }
