@@ -22,7 +22,7 @@ public class FichaSocioeconomicaController {
 	@Autowired
 	FichaSocioeconomicaService fichaSocioeconomicaService;
 	
-	@PostMapping
+	@PostMapping(value = "/addfichaSocioeconomica")
 	public ResponseEntity<String> guardarFichaSocioeconomica(@RequestBody FichaSocioeconomica fichaSocioeconomica) {
 		fichaSocioeconomicaService.guardarFichaSocioeconomica(fichaSocioeconomica);
         return ResponseEntity.ok("OK");

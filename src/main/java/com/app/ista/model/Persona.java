@@ -17,14 +17,14 @@ public class Persona {
 	private String celular;
 	private String correo;
 	private String genero;
-	private Date fechaNacimiento;
+	private String fechaNacimiento;
 	private int edad;
 	private String nacionalidad;
 	private String discapacidad;
 	private String estado_civil;
 	
 	public Persona(String cedula, String nombres, String apellidos, String direccion, String celular, String correo,
-			String genero, Date fechaNacimiento, int edad, String nacionalidad, String discapacidad, String estado_civil) {
+			String genero, String fechaNacimiento, int edad, String nacionalidad, String discapacidad, String estado_civil) {
 		this.cedula = cedula;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
@@ -95,11 +95,11 @@ public class Persona {
 		this.genero = genero;
 	}
 
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
