@@ -27,4 +27,12 @@ public class ActividadPersonaService {
 		return actividadPersonaRepository.findAll();
 	}
 
+	public void eliminaActividad(int idActividadPersona){
+		if(actividadPersonaRepository.findByIdActividadPersona(idActividadPersona)!= null){
+this.actividadPersonaRepository.deleteById(idActividadPersona);
+		}
+	}
+		
+
+
 }
