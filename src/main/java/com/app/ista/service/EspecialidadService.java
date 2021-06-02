@@ -1,6 +1,7 @@
 package com.app.ista.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,4 +27,20 @@ public class EspecialidadService {
 	public List<Especialidad>listarEspecialidad(){
 		return especiarepo.findAll();
 	}
+
+	public Optional<Especialidad> listarEspecialidadId(Long id){
+		return especiarepo.findById(id);
+	}
+
+	public void eliminarEspecialidad(Long idespecialidad) {
+		
+		especiarepo.deleteById(idespecialidad);
+   }
+
+   	public Especialidad editarEspecialidad(Long idCentro, Especialidad especialidad) {
+	   return especiarepo.save(especialidad);
+   }
+
+   	
+
 }

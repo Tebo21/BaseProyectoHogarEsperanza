@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,36 +28,39 @@ public class CentroMedicoController {
 	@Autowired
 	CentroMedicoService centroMedicoService;
 	
-	@PostMapping(path = "/guardarCentroMedico")
-	public ResponseEntity<String> guardarCentroMedico(@RequestBody CentroMedico centroMedico) {
-		centroMedicoService.guardarCentroMedico(centroMedico);
-        return ResponseEntity.ok("OK");
+	@PostMapping(path = "/guardar")
+	public CentroMedico guardarCentroMedico(@RequestBody CentroMedico centroMed) {
+		centroMedicoService.guardarCentroMedico(centroMed);
+        return centroMed;
     }
 
-	@GetMapping(path = "/listadoCentroMedico", produces = "application/json")
+	boolean transaccion;
+
+	@GetMapping(path = "/listado", produces = "application/json")
 	public List<CentroMedico>listarCentroMedico(){
 		return centroMedicoService.listarCentroMedico();
 	}
 
-	@GetMapping(path = "/listadoCentroMedicoId/{centroMedicoId}", produces = "application/json")
+	@GetMapping(path = "/listadoId/{centroMedicoId}", produces = "application/json")
 	public Optional<CentroMedico>listarCentroMedicoId(Long idCentro){
 		return centroMedicoService.listarCentroId(idCentro);
 	}	
 
 
-	@DeleteMapping(path = "/eliminarCentroMedico/{centroMedicoId}")
+	@DeleteMapping(path = "/eliminar/{centroMedicoId}")
 	public void deleteByIdCentroMe(@PathVariable (name = "centroMedicoId") Long centroMedicoId){
 		centroMedicoService.eliminarCentroMedico(centroMedicoId);
 	}
 
-	@PutMapping(path = "/editarCentroMedico/{centroMedicoId}")
-	public ResponseEntity<String> modificarCentroMedico(@RequestBody CentroMedico centroMedico,
-	@PathVariable(name = "centroMedicoId") Long centroMedId) {
-		CentroMedico centro = centroMedicoService.listarCentroId(centroMedId).get();
+	@PutMapping(path = "/editar/{centroMedicoId}")
+	public CentroMedico modificarCentroMedico(@RequestBody CentroMedico centroMedico,
+	@PathVariable(name = "centroMedicoId") Long centroMedicoId) {
+		CentroMedico centro = centroMedicoService.listarCentroId(centroMedicoId).get();
 		centro.setDireccionCentroMedico(centroMedico.getDireccionCentroMedico());
 		centro.setNombreCentroMedico(centroMedico.getNombreCentroMedico());
 		centro.setTelefonoCentroMedico(centroMedico.getTelefonoCentroMedico());
-		return ResponseEntity.ok("OK");
+		centroMedicoService.editarCentroMedico(centroMedicoId, centro);
+		return centro;
     }
 	
 }

@@ -10,12 +10,12 @@ public class Especialidad {
 	@Id
 	private int idEspecialidad;
 	private String nombreEspecialidad;
-	private String idCentroMedico;
+	private String centroMedico;
 	
-	public Especialidad(int idEspecialidad, String nombreEspecialidad, String idCentroMedico) {
+	public Especialidad(int idEspecialidad, String nombreEspecialidad, String centroMedico) {
 		this.idEspecialidad = idEspecialidad;
 		this.nombreEspecialidad = nombreEspecialidad;
-		this.idCentroMedico = idCentroMedico;
+		this.centroMedico = centroMedico;
 	}
 
 	public int getIdEspecialidad() {
@@ -34,11 +34,11 @@ public class Especialidad {
 		this.nombreEspecialidad = nombreEspecialidad;
 	}
 
-	public String getIdCentroMedico() {
-		return idCentroMedico;
+	public String getCentroMedico() {
+		return centroMedico;
 	}
 
-	public void setIdCentroMedico(String idCentroMedico) {
-		this.idCentroMedico = idCentroMedico;
+	public void setCentroMedico(String centroMedico) {
+		this.centroMedico = centroMedico;
 	}
 }
