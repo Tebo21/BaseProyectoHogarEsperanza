@@ -22,10 +22,10 @@ public class CitasMedicasController {
 	@Autowired
 	CitasMedicasService citasMedicasService;
 	
-	@PostMapping
-    public ResponseEntity<String> guardarCitaMedica(@RequestBody CitasMedicas citasMedicas) {
+	@PostMapping(path = "/guardar")
+    public CitasMedicas guardarCitaMedica(@RequestBody CitasMedicas citasMedicas) {
 		citasMedicasService.guardarCitaMedica(citasMedicas);
-        return ResponseEntity.ok("OK");
+        return citasMedicas;
     }
 
 	@GetMapping(path = "/listadoCitasMedicas", produces = "application/json")

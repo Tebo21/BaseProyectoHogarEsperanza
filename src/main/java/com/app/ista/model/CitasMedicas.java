@@ -17,13 +17,13 @@ public class CitasMedicas {
 	private Persona acompaniante;
 	private String mensaje;
 	private Persona trabajadorFundacion;
-	private Especialidad especialidad;
+	private String especialidad;
 	private String nota;
 	private String idCentroMedico;
 
 	public CitasMedicas(int idCitasMedicas, String descripcionCitaMedica, Date fechaRegistro, Date fechaCitaMedica,
 			Persona paciente, Persona acompaniante, String mensaje, Persona trabajadorFundacion,
-			Especialidad especialidad, String nota, String idCentroMedico) {
+			String especialidad, String nota, String idCentroMedico) {
 		this.idCitasMedicas = idCitasMedicas;
 		this.descripcionCitaMedica = descripcionCitaMedica;
 		this.fechaRegistro = fechaRegistro;
@@ -101,11 +101,11 @@ public class CitasMedicas {
 		this.trabajadorFundacion = trabajadorFundacion;
 	}
 
-	public Especialidad getEspecialidad() {
+	public String getEspecialidad() {
 		return especialidad;
 	}
 
-	public void setEspecialidad(Especialidad especialidad) {
+	public void setEspecialidad(String especialidad) {
 		this.especialidad = especialidad;
 	}
 
