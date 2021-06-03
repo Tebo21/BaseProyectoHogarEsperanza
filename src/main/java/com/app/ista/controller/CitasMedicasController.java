@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.ista.model.CitasMedicas;
 import com.app.ista.service.CitasMedicasService;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/citasMedicas")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CitasMedicasController {
 	
 	@Autowired
@@ -28,8 +30,13 @@ public class CitasMedicasController {
         return citasMedicas;
     }
 
-	@GetMapping(path = "/listadoCitasMedicas", produces = "application/json")
-	public List<CitasMedicas>listarCitasMedicas(){
+	@GetMapping(path = "/listar", produces = "application/json")
+	public List<CitasMedicas>listCitasMedicas(){
 		return citasMedicasService.listarCitasMedicas();
+	}
+
+	@DeleteMapping(path = "/eliminar")
+	public void deleteByIdCistasMe(@PathVariable (name = "citaMedica") Long citaMedica){
+		citasMedicasService.eliminarCitaMedica(citaMedica);
 	}
 }

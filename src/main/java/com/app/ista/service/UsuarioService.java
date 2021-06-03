@@ -24,6 +24,10 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
 	}
 	
+	public Usuarios guardar(Usuarios usuario) {
+		return usuarioRepository.save(usuario);
+	}
+	
 	public List<Usuarios>listarUsuarios(){
 		return usuarioRepository.findAll();
 	}
@@ -31,4 +35,12 @@ public class UsuarioService {
 	public Usuarios iniciarSesion(String usuarioCedula, String usuarioContrasenia, int usuarioTipo) {
 		return usuarioRepository.findByUsuarioCedulaAndUsuarioContraseniaAndUsuarioTipo(usuarioCedula, usuarioContrasenia, usuarioTipo);
 	}
+	
+	public Usuarios buscarPorId(int idUsuario) {
+		return usuarioRepository.findByIdUsuario(idUsuario);
+	}
+	
+    public Integer eliminarUsuario(Integer idUsuario) {
+        return usuarioRepository.deleteByIdUsuario(idUsuario);
+    }
 }

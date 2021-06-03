@@ -14,4 +14,8 @@ public interface DonacionesRepository extends MongoRepository <Donaciones, Long>
 	@Query(value = "{},{idDonacion:1}", sort = "{_id: -1}")
 	List<Donaciones> id();
 	
+	List<Donaciones> findByNombreDonacion(String nombreDonacion);
+	
+	List<Donaciones> findByCategoria(String categoria);
+	
 }

@@ -14,7 +14,6 @@ public class CitasMedicasService {
 	@Autowired
 	private CitasMedicasRepository citasMedicasRepository;
 	
-	
 	public CitasMedicas guardarCitaMedica(CitasMedicas citasMedicas) {
 		if (citasMedicasRepository.findAll().isEmpty()) {
 			citasMedicas.setIdCitasMedicas(1);
@@ -27,5 +26,10 @@ public class CitasMedicasService {
 	public List<CitasMedicas>listarCitasMedicas(){
 		return citasMedicasRepository.findAll();
 	}
+
+	public void eliminarCitaMedica(Long idcitas) {
+		citasMedicasRepository.deleteById(idcitas);
+   }
+
 
 }
