@@ -16,7 +16,9 @@ public interface UsuariosRepository extends MongoRepository<Usuarios, Integer>{
     List<Usuarios> id();
 
 	Usuarios findByUsuarioCedulaAndUsuarioContraseniaAndUsuarioTipo(String usuarioCedula, String usuarioContrasenia, int usuarioTipo);
+	
 	Usuarios findByIdUsuario(int idUsuario);
+	
 	@Transactional
-	   Integer deleteByIdUsuario(int idUsuario);
+	Integer deleteByIdUsuario(int idUsuario);
 }

@@ -45,7 +45,7 @@ public class UsuariosController {
 		}
 		return new Usuarios();
 	}
-	
+		
 	@PutMapping("/update-usuario")
 	public Usuarios actualizarUsuario(@RequestBody Usuarios usuario) {
 		Usuarios usuarioAct = usuarioService.buscarPorId(usuario.getIdUsuario());
@@ -53,10 +53,10 @@ public class UsuariosController {
 		usuarioAct.setUsuarioNombre(usuario.getUsuarioNombre());
 		usuarioAct.setUsuarioContrasenia(usuario.getUsuarioContrasenia());
 		usuarioAct.setUsuarioTipo(usuario.getUsuarioTipo());
-		usuarioService.guardarUsuario(usuarioAct);
-		
+		usuarioService.guardar(usuarioAct);
 		return usuarioAct;
 	}
+	
 	@DeleteMapping("delete-usuario/{idUsuario}")
 	 public ResponseEntity<Integer>eliminarEmpleado(@PathVariable int idUsuario){
 		usuarioService.eliminarUsuario(idUsuario);	

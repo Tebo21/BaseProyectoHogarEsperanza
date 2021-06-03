@@ -24,6 +24,10 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
 	}
 	
+	public Usuarios guardar(Usuarios usuario) {
+		return usuarioRepository.save(usuario);
+	}
+	
 	public List<Usuarios>listarUsuarios(){
 		return usuarioRepository.findAll();
 	}
