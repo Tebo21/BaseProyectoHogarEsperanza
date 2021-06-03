@@ -6,16 +6,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 //Spring create a collection in MongoDB 
 @Document(collection = "usuarios")
 public class Usuarios {
-	
+
 	@Id
 	private int idUsuario;
-	
+
 	private String usuarioCedula;
 	private String usuarioNombre;
 	private String usuarioContrasenia;
 	private int usuarioTipo;
-	 
-	public Usuarios() {	}
+
+	public Usuarios() {
+	}
 
 	public int getIdUsuario() {
 		return idUsuario;
@@ -56,7 +57,5 @@ public class Usuarios {
 	public void setUsuarioTipo(int usuarioTipo) {
 		this.usuarioTipo = usuarioTipo;
 	}
-
-	
 
 }

@@ -26,9 +26,9 @@ public class ActividadPersonaController {
 
 	@PostMapping
 	@CrossOrigin
-	public ResponseEntity<String> guardarActividadPersona(@RequestBody ActividadPersona actividadPersona) {
+	public ActividadPersona guardarActividadPersona(@RequestBody ActividadPersona actividadPersona) {
 		actividadPersonaService.guardarActividadPersona(actividadPersona);
-		return ResponseEntity.ok("OK");
+		return actividadPersona;
 	}
 
 	@GetMapping(path = "/listadoActividadesPersona", produces = "application/json")
