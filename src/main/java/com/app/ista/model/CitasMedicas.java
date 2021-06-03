@@ -13,44 +13,84 @@ public class CitasMedicas {
 	private String descripcionCitaMedica;
 	private Date fechaRegistro;
 	private Date fechaCitaMedica;
-	private Persona paciente;
-	private Persona acompaniante;
+	private String id_paciente;
+	private String id_acompaniante;
 	private String mensaje;
-	private Persona trabajadorFundacion;
-	private Especialidad especialidad;
+	private String id_trabajadorFundacion;
+	private int especialidad;
 	private String nota;
-	private String idCentroMedico;
+	private int idCentroMedico;
 
 	public CitasMedicas(int idCitasMedicas, String descripcionCitaMedica, Date fechaRegistro, Date fechaCitaMedica,
-			Persona paciente, Persona acompaniante, String mensaje, Persona trabajadorFundacion,
-			Especialidad especialidad, String nota, String idCentroMedico) {
-		this.idCitasMedicas = idCitasMedicas;
-		this.descripcionCitaMedica = descripcionCitaMedica;
-		this.fechaRegistro = fechaRegistro;
-		this.fechaCitaMedica = fechaCitaMedica;
-		this.paciente = paciente;
-		this.acompaniante = acompaniante;
-		this.mensaje = mensaje;
-		this.trabajadorFundacion = trabajadorFundacion;
-		this.especialidad = especialidad;
-		this.nota = nota;
+			String id_paciente, String id_acompaniante, String mensaje, String id_trabajadorFundacion, int especialidad,
+			String nota, int idCentroMedico) {
+		this.setIdCitasMedicas(idCitasMedicas);
+		this.setDescripcionCitaMedica(descripcionCitaMedica);
+		this.setFechaRegistro(fechaRegistro);
+		this.setFechaCitaMedica(fechaCitaMedica);
+		this.setId_paciente(id_paciente);
+		this.setId_acompaniante(id_acompaniante);
+		this.setMensaje(mensaje);
+		this.setId_trabajadorFundacion(id_trabajadorFundacion);
+		this.setEspecialidad(especialidad);
+		this.setNota(nota);
+		this.setIdCentroMedico(idCentroMedico);
+	}
+
+	public int getIdCentroMedico() {
+		return idCentroMedico;
+	}
+
+	public void setIdCentroMedico(int idCentroMedico) {
 		this.idCentroMedico = idCentroMedico;
 	}
 
-	public int getIdCitasMedicas() {
-		return idCitasMedicas;
+	public String getNota() {
+		return nota;
 	}
 
-	public void setIdCitasMedicas(int idCitasMedicas) {
-		this.idCitasMedicas = idCitasMedicas;
+	public void setNota(String nota) {
+		this.nota = nota;
 	}
 
-	public String getDescripcionCitaMedica() {
-		return descripcionCitaMedica;
+	public int getEspecialidad() {
+		return especialidad;
 	}
 
-	public void setDescripcionCitaMedica(String descripcionCitaMedica) {
-		this.descripcionCitaMedica = descripcionCitaMedica;
+	public void setEspecialidad(int especialidad) {
+		this.especialidad = especialidad;
+	}
+
+	public String getId_trabajadorFundacion() {
+		return id_trabajadorFundacion;
+	}
+
+	public void setId_trabajadorFundacion(String id_trabajadorFundacion) {
+		this.id_trabajadorFundacion = id_trabajadorFundacion;
+	}
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+
+	public String getId_acompaniante() {
+		return id_acompaniante;
+	}
+
+	public void setId_acompaniante(String id_acompaniante) {
+		this.id_acompaniante = id_acompaniante;
+	}
+
+	public String getId_paciente() {
+		return id_paciente;
+	}
+
+	public void setId_paciente(String id_paciente) {
+		this.id_paciente = id_paciente;
 	}
 
 	public Date getFechaRegistro() {
@@ -69,60 +109,20 @@ public class CitasMedicas {
 		this.fechaCitaMedica = fechaCitaMedica;
 	}
 
-	public Persona getPaciente() {
-		return paciente;
+	public String getDescripcionCitaMedica() {
+		return descripcionCitaMedica;
 	}
 
-	public void setPaciente(Persona paciente) {
-		this.paciente = paciente;
+	public void setDescripcionCitaMedica(String descripcionCitaMedica) {
+		this.descripcionCitaMedica = descripcionCitaMedica;
 	}
 
-	public Persona getAcompaniante() {
-		return acompaniante;
+	public int getIdCitasMedicas() {
+		return idCitasMedicas;
 	}
 
-	public void setAcompaniante(Persona acompaniante) {
-		this.acompaniante = acompaniante;
-	}
-
-	public String getMensaje() {
-		return mensaje;
-	}
-
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
-	}
-
-	public Persona getTrabajadorFundacion() {
-		return trabajadorFundacion;
-	}
-
-	public void setTrabajadorFundacion(Persona trabajadorFundacion) {
-		this.trabajadorFundacion = trabajadorFundacion;
-	}
-
-	public Especialidad getEspecialidad() {
-		return especialidad;
-	}
-
-	public void setEspecialidad(Especialidad especialidad) {
-		this.especialidad = especialidad;
-	}
-
-	public String getNota() {
-		return nota;
-	}
-
-	public void setNota(String nota) {
-		this.nota = nota;
-	}
-
-	public String getIdCentroMedico() {
-		return idCentroMedico;
-	}
-
-	public void setIdCentroMedico(String idCentroMedico) {
-		this.idCentroMedico = idCentroMedico;
+	public void setIdCitasMedicas(int idCitasMedicas) {
+		this.idCitasMedicas = idCitasMedicas;
 	}
 
 }
