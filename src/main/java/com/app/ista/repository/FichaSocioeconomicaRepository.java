@@ -13,4 +13,5 @@ public interface FichaSocioeconomicaRepository extends MongoRepository<FichaSoci
 
 	@Query(value = "{},{idFichaSocioeconomica:1}", sort = "{_id: -1}")
     List<FichaSocioeconomica> id();
+    FichaSocioeconomica findByCedulaPersona(String cedulaPersona);
 }
