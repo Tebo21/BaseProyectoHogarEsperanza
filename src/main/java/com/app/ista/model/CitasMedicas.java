@@ -17,13 +17,13 @@ public class CitasMedicas {
 	private String id_acompaniante;
 	private String mensaje;
 	private String id_trabajadorFundacion;
-	private int especialidad;
+	private String especialidad;
 	private String nota;
-	private int idCentroMedico;
+	private String idCentroMedico;
 
 	public CitasMedicas(int idCitasMedicas, String descripcionCitaMedica, Date fechaRegistro, Date fechaCitaMedica,
-			String id_paciente, String id_acompaniante, String mensaje, String id_trabajadorFundacion, int especialidad,
-			String nota, int idCentroMedico) {
+			String id_paciente, String id_acompaniante, String mensaje, String id_trabajadorFundacion, String especialidad,
+			String nota, String idCentroMedico) {
 		this.setIdCitasMedicas(idCitasMedicas);
 		this.setDescripcionCitaMedica(descripcionCitaMedica);
 		this.setFechaRegistro(fechaRegistro);
@@ -37,11 +37,11 @@ public class CitasMedicas {
 		this.setIdCentroMedico(idCentroMedico);
 	}
 
-	public int getIdCentroMedico() {
+	public String getIdCentroMedico() {
 		return idCentroMedico;
 	}
 
-	public void setIdCentroMedico(int idCentroMedico) {
+	public void setIdCentroMedico(String idCentroMedico) {
 		this.idCentroMedico = idCentroMedico;
 	}
 
@@ -53,11 +53,11 @@ public class CitasMedicas {
 		this.nota = nota;
 	}
 
-	public int getEspecialidad() {
+	public String getEspecialidad() {
 		return especialidad;
 	}
 
-	public void setEspecialidad(int especialidad) {
+	public void setEspecialidad(String especialidad) {
 		this.especialidad = especialidad;
 	}
 
