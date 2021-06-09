@@ -25,18 +25,18 @@ public class CitasMedicasController {
 	CitasMedicasService citasMedicasService;
 	
 	@PostMapping(path = "/guardar")
-    public CitasMedicas guardarCitaMedica(@RequestBody CitasMedicas citasMedicas) {
-		citasMedicasService.guardarCitaMedica(citasMedicas);
+        public CitasMedicas guardarCitaMedica(@RequestBody CitasMedicas citasMedicas) {
+		citasMedicasService.guardarCita(citasMedicas);
         return citasMedicas;
-    }
+        }
 
 	@GetMapping(path = "/listar", produces = "application/json")
 	public List<CitasMedicas>listCitasMedicas(){
-		return citasMedicasService.listarCitasMedicas();
+		return citasMedicasService.listarCita();
 	}
 
-	@DeleteMapping(path = "/eliminar")
-	public void deleteByIdCistasMe(@PathVariable (name = "citaMedica") Long citaMedica){
-		citasMedicasService.eliminarCitaMedica(citaMedica);
+	@DeleteMapping(path = "/eliminar/{idCitaMedica}")
+	public void deleteByIdCistasMe(@PathVariable (name = "idCitaMedica") Long citaMedica){
+		citasMedicasService.eliminarCita(citaMedica);
 	}
 }
