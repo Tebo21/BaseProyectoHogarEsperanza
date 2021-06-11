@@ -28,7 +28,7 @@ public class CitasMedicasService {
 		return citasMedicasRepository.findAll();
 	}
 
-	public Optional<CitasMedicas> listarCitasId(Long id){
+	public Optional<CitasMedicas> listarCitasId( Long id){
 		return citasMedicasRepository.findById(id);
 	}
 
@@ -37,8 +37,9 @@ public class CitasMedicasService {
 		citasMedicasRepository.deleteById(idcita);
         }
 
-   	/*public CitasMedicas editarCita(Long idCentro, Especialidad especialidad) {
-	   return especiarepo.save(especialidad);
-        }*/
+   	public CitasMedicas editarCitas(Long idCita, CitasMedicas citas) {
+	   return citasMedicasRepository.save(citas);
+   }
+
 
 }
