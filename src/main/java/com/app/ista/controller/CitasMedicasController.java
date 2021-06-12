@@ -1,5 +1,6 @@
 package com.app.ista.controller;
 
+import com.app.ista.model.CentroMedico;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.ista.model.CitasMedicas;
 import com.app.ista.service.CitasMedicasService;
+import java.util.Optional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("/citasMedicas")
@@ -25,18 +28,41 @@ public class CitasMedicasController {
 	CitasMedicasService citasMedicasService;
 	
 	@PostMapping(path = "/guardar")
-    public CitasMedicas guardarCitaMedica(@RequestBody CitasMedicas citasMedicas) {
-		citasMedicasService.guardarCitaMedica(citasMedicas);
+        public CitasMedicas guardarCitaMedica(@RequestBody CitasMedicas citasMedicas) {
+		citasMedicasService.guardarCita(citasMedicas);
         return citasMedicas;
-    }
+        }
 
 	@GetMapping(path = "/listar", produces = "application/json")
 	public List<CitasMedicas>listCitasMedicas(){
-		return citasMedicasService.listarCitasMedicas();
+		return citasMedicasService.listarCita();
 	}
 
-	@DeleteMapping(path = "/eliminar")
-	public void deleteByIdCistasMe(@PathVariable (name = "citaMedica") Long citaMedica){
-		citasMedicasService.eliminarCitaMedica(citaMedica);
+        @GetMapping(path = "/listadoId/{citasMedicasId}", produces = "application/json")
+	public Optional<CitasMedicas>listarCitasId(Long idCitas){
+		return citasMedicasService.listarCitasId(idCitas);
+	}	
+
+	@DeleteMapping(path = "/eliminar/{idCitaMedica}")
+	public void deleteByIdCistasMe(@PathVariable (name = "idCitaMedica") Long citaMedica){
+		citasMedicasService.eliminarCita(citaMedica);
 	}
+        
+        @PutMapping(path = "/editar/{citasMedicasId}")
+	public CitasMedicas modificarCita(@RequestBody CitasMedicas citadG,
+	@PathVariable(name = "citasMedicasId") Long citaId) {
+		CitasMedicas cit = citasMedicasService.listarCitasId(citaId).get();
+		cit.setDescripcionCitaMedica(citadG.getDescripcionCitaMedica());
+		cit.setFechaRegistro(citadG.getFechaCitaMedica());
+                cit.setFechaCitaMedica(citadG.getFechaCitaMedica());
+                cit.setPaciente(citadG.getPaciente());
+                cit.setAcompaniante(citadG.getAcompaniante());
+                cit.setMensaje(citadG.getMensaje());
+                cit.setTrabajadorFundacion(citadG.getTrabajadorFundacion());
+                cit.setCentroMedico(citadG.getCentroMedico());
+                cit.setEspecialidad(citadG.getEspecialidad());
+                cit.setNota(citadG.getNota());
+		citasMedicasService.editarCitas(citaId, cit);
+		return cit;
+    }
 }
