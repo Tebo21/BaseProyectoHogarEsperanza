@@ -6,7 +6,6 @@ import com.app.ista.model.TipoServicio;
 import com.app.ista.service.TipoSerActiService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,9 +24,10 @@ public class TipoServActividadController {
 
 
     @PostMapping
-    public ResponseEntity<String> guardarTipoActividadPersona(@RequestBody TipoServicio tipoActividad){
+    @CrossOrigin
+    public TipoServicio guardarTipoActividadPersona(@RequestBody TipoServicio tipoActividad){
         TipoActiService.guardadTipoAct(tipoActividad);
-        return ResponseEntity.ok("OK");
+        return tipoActividad;
     }
 
     @GetMapping(path = "/listadoTipoAct", produces = "application/json")

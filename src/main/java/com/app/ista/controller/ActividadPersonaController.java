@@ -2,8 +2,8 @@ package com.app.ista.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,4 +41,10 @@ public class ActividadPersonaController {
     public void eliminar(@PathVariable int idActividadPersona) {
         this.actividadPersonaService.eliminaActividad(idActividadPersona);
     }
+
+	@GetMapping(path = "/busquedaDiaria/{fechaActividad}", produces = "application/json")
+	public List<ActividadPersona> getActiviDiria(@PathVariable String fechaActividad) {
+		return actividadPersonaService.busquedaActDiaria(fechaActividad);
+	}
 }
+	
