@@ -13,14 +13,14 @@ public class Donaciones {
 	private String nombreDonacion;
 	private int cantidad;
 	private String categoria;
-	private Date fechaDonacion;
+	private Date[] fechaDonacion;
 	private String descripcionDonacion;
-	private String cedulaPersona;
+	private String[] cedulaPersona;
 	
 	//private byte[] picByte;
 	
-	public Donaciones(int idDonacion, String nombreDonacion, int cantidad, String categoria, Date fechaDonacion,
-			String descripcionDonacion, String cedulaPersona/*, byte[] picByte*/) {
+	public Donaciones(int idDonacion, String nombreDonacion, int cantidad, String categoria, Date[] fechaDonacion,
+			String descripcionDonacion, String[] cedulaPersona/*, byte[] picByte*/) {
 		this.idDonacion = idDonacion;
 		this.nombreDonacion = nombreDonacion;
 		this.cantidad = cantidad;
@@ -63,11 +63,11 @@ public class Donaciones {
 		this.categoria = categoria;
 	}
 
-	public Date getFechaDonacion() {
+	public Date[] getFechaDonacion() {
 		return fechaDonacion;
 	}
 
-	public void setFechaDonacion(Date fechaDonacion) {
+	public void setFechaDonacion(Date[] fechaDonacion) {
 		this.fechaDonacion = fechaDonacion;
 	}
 
@@ -79,11 +79,11 @@ public class Donaciones {
 		this.descripcionDonacion = descripcionDonacion;
 	}
 
-	public String getCedulaPersona() {
+	public String[] getCedulaPersona() {
 		return cedulaPersona;
 	}
 
-	public void setCedulaPersona(String cedulaPersona) {
+	public void setCedulaPersona(String[] cedulaPersona) {
 		this.cedulaPersona = cedulaPersona;
 	}
 
