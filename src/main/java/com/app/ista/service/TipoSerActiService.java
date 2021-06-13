@@ -22,7 +22,9 @@ public class TipoSerActiService {
         }
 		return TpoActividadRepo.save(TipoAct);
     }
-    public List<TipoServicio>listarAll(){
+
+
+  public List<TipoServicio>listarAll(){
 		return TpoActividadRepo.findAll();
 	}
 

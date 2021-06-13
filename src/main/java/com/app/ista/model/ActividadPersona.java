@@ -1,6 +1,5 @@
 package com.app.ista.model;
 
-import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,7 +10,7 @@ public class ActividadPersona {
 	@Id
 	private int idActividadPersona;
 	private Persona cedulaPersona;
-	private Date fechaActividad;
+	private String fechaActividad;
 	private String horaInicio;
 	private String horaFin;
 	private String descripcionActividad;
@@ -22,7 +21,7 @@ public class ActividadPersona {
 	}
 
 
-	public ActividadPersona(int idActividadPersona, Persona cedulaPersona, Date fechaActividad, String horaInicio, String horaFin, String descripcionActividad, TipoServicio tipoActividad) {
+	public ActividadPersona(int idActividadPersona, Persona cedulaPersona, String fechaActividad, String horaInicio, String horaFin, String descripcionActividad, TipoServicio tipoActividad) {
 		this.idActividadPersona = idActividadPersona;
 		this.cedulaPersona = cedulaPersona;
 		this.fechaActividad = fechaActividad;
@@ -32,7 +31,14 @@ public class ActividadPersona {
 		this.tipoActividad = tipoActividad;
 	}
 
-	
+	public String getFechaActividad() {
+		return this.fechaActividad;
+	}
+
+	public void setFechaActividad(String fechaActividad) {
+		this.fechaActividad = fechaActividad;
+	}
+
 
 	public String getHoraInicio() {
 		return this.horaInicio;
@@ -65,14 +71,6 @@ public class ActividadPersona {
 
 	public void setIdActividadPersona(int idActividadPersona) {
 		this.idActividadPersona = idActividadPersona;
-	}
-
-	public Date getFechaActividad() {
-		return fechaActividad;
-	}
-
-	public void setFechaActividad(Date fechaActividad) {
-		this.fechaActividad = fechaActividad;
 	}
 
 	public String getDescripcionActividad() {
