@@ -18,7 +18,7 @@ public class EntregaDonacion {
 	
 	public EntregaDonacion(int idEntregaDonacion, String cedulaBeneficiario, String productoEntregado,
 			String descripcionProducto, int cantidadEntregada, Date fechaEntrega) {
-		super();
+		
 		this.idEntregaDonacion = idEntregaDonacion;
 		this.cedulaBeneficiario = cedulaBeneficiario;
 		this.productoEntregado = productoEntregado;
