@@ -14,6 +14,8 @@ public class Usuarios {
 	private String usuarioNombre;
 	private String usuarioContrasenia;
 	private int usuarioTipo;
+	private boolean usuarioEstado;
+	private String usuarioFechaCreacion;
 
 	public Usuarios() {
 	}
@@ -58,4 +60,20 @@ public class Usuarios {
 		this.usuarioTipo = usuarioTipo;
 	}
 
+	public boolean isUsuarioEstado() {
+		return usuarioEstado;
+	}
+
+	public void setUsuarioEstado(boolean usuarioEstado) {
+		this.usuarioEstado = usuarioEstado;
+	}
+
+	public String getUsuarioFechaCreacion() {
+		return usuarioFechaCreacion;
+	}
+
+	public void setUsuarioFechaCreacion(String usuarioFechaCreacion) {
+		this.usuarioFechaCreacion = usuarioFechaCreacion;
+	}
+	
 }

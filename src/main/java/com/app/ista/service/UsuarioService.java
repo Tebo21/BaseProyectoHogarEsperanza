@@ -40,6 +40,10 @@ public class UsuarioService {
 		return usuarioRepository.findByIdUsuario(idUsuario);
 	}
 	
+	public Usuarios buscarPorCedula(String usuarioCedula) {
+		return usuarioRepository.findByUsuarioCedula(usuarioCedula);
+	}
+	
     public Integer eliminarUsuario(Integer idUsuario) {
         return usuarioRepository.deleteByIdUsuario(idUsuario);
     }
