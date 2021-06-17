@@ -53,6 +53,8 @@ public class UsuariosController {
 		usuarioAct.setUsuarioNombre(usuario.getUsuarioNombre());
 		usuarioAct.setUsuarioContrasenia(usuario.getUsuarioContrasenia());
 		usuarioAct.setUsuarioTipo(usuario.getUsuarioTipo());
+		usuarioAct.setUsuarioEstado(usuario.isUsuarioEstado());
+		usuarioAct.setUsuarioFechaCreacion(usuario.getUsuarioFechaCreacion());
 		usuarioService.guardar(usuarioAct);
 		return usuarioAct;
 	}
@@ -63,4 +65,13 @@ public class UsuariosController {
        return new ResponseEntity<>(idUsuario, HttpStatus.OK);
 	}
 	
+	@GetMapping("/getUsuarioByCedula")
+	public Usuarios getByCedula(@RequestParam("usuarioCedula") String usuarioCedula) {
+		Usuarios usuario = usuarioService.buscarPorCedula(usuarioCedula);
+		if (usuario != null) {
+			return usuario;
+		}
+		return new Usuarios();
+	}
+
 }
