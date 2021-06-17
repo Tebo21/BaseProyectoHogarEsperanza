@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,5 +47,18 @@ public class ActividadPersonaController {
 	public List<ActividadPersona> getActiviDiria(@PathVariable String fechaActividad) {
 		return actividadPersonaService.busquedaActDiaria(fechaActividad);
 	}
+
+	@PutMapping("/update-acti/{IdActividadPersona}")
+	public ActividadPersona actualizarActividad(@RequestBody ActividadPersona acti, @PathVariable (name="IdActividadPersona") Integer id) {
+		ActividadPersona Act = actividadPersonaService.listarporId(id).get();
+		Act.setCedulaPersona(acti.getCedulaPersona());
+		Act.setFechaActividad(acti.getFechaActividad());
+		Act.setHoraInicio(acti.getHoraInicio());
+		Act.setHoraFin(acti.getHoraFin());
+		Act.setDescripcionActividad(acti.getDescripcionActividad());
+		Act.setTipoActividad(acti.getTipoActividad());
+		actividadPersonaService.guardar(Act);
+		return Act;
+	}	
 }
 	

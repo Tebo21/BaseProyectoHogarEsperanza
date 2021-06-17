@@ -1,6 +1,7 @@
 package com.app.ista.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,5 +36,16 @@ public class ActividadPersonaService {
 
 	public List<ActividadPersona> busquedaActDiaria(String fechaActividad) {
 		return actividadPersonaRepository.findByFechaActividad(fechaActividad);	
-	} 
+	}
+	
+	public ActividadPersona putUsuario(Integer idUsuario) {
+        return actividadPersonaRepository.findByIdActividadPersona(idUsuario);
+    }
+
+	public ActividadPersona guardar(ActividadPersona acti){
+		return actividadPersonaRepository.save(acti);
+	}
+	public Optional<ActividadPersona> listarporId( Integer id){
+		return actividadPersonaRepository.findById(id);
+	}
 }

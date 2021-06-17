@@ -23,6 +23,11 @@ public class TipoSerActiService {
 		return TpoActividadRepo.save(TipoAct);
     }
 
+    public void eliminarTipoAct(int idTipoActividad){
+      if (TpoActividadRepo.findByIdTipoActividad(idTipoActividad)!= null) {
+        this.TpoActividadRepo.deleteById(idTipoActividad);
+      }
+    } 
 
   public List<TipoServicio>listarAll(){
 		return TpoActividadRepo.findAll();

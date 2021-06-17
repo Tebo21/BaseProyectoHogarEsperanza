@@ -17,4 +17,6 @@ public interface ActividadPersonaRepository extends MongoRepository<ActividadPer
     ActividadPersona findByIdActividadPersona(int idActividadPersona );
 
     List<ActividadPersona>findByFechaActividad(String fechaActividad);
+
+    
 }

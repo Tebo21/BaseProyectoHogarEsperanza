@@ -9,10 +9,12 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TipoSerActiRepository extends MongoRepository<TipoServicio, Long>{
+public interface TipoSerActiRepository extends MongoRepository<TipoServicio, Integer>{
     
     @Query(value = "{},{idTipoActividad:1}", sort = "{_id: -1}")
     List<TipoServicio> id();
 
     TipoServicio findByNombreActividad(String nombreActividad);
+
+    TipoServicio findByIdTipoActividad(int idTipoActividad);
 }

@@ -7,6 +7,7 @@ import com.app.ista.service.TipoSerActiService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,4 +40,10 @@ public class TipoServActividadController {
 	public TipoServicio porNombre(@PathVariable String nombreActividad) {
 		return TipoActiService.byNombreActi(nombreActividad);
 	}
+
+    @DeleteMapping("/eliminar/{id}")
+    @CrossOrigin
+    public void eliminar(@PathVariable int id) {
+        this.TipoActiService.eliminarTipoAct(id);
+    }
 }
