@@ -1,11 +1,13 @@
 package com.app.ista.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.app.ista.model.CentroMedico;
 import com.app.ista.model.CitasMedicas;
 
 
@@ -14,4 +16,6 @@ public interface CitasMedicasRepository extends MongoRepository<CitasMedicas, Lo
 
 	@Query(value = "{},{idCitasMedicas:1}", sort = "{_id: -1}")
     List<CitasMedicas> id();
+	
+	List<CitasMedicas> findByFechaCitaMedica(Date fechaCitaMedica);
 }
