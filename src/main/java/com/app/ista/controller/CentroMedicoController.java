@@ -63,4 +63,9 @@ public class CentroMedicoController {
 		return centro;
     }
 	
+	@GetMapping(path = "/porNombre/{nombreCentroMedico}", produces = "application/json")
+	public CentroMedico PorNombre(String nombreCentroMedico){
+		return centroMedicoService.listarCentroMedicoPorNombre(nombreCentroMedico);
+	}	
+
 }
