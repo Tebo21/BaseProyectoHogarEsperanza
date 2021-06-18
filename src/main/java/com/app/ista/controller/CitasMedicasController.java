@@ -78,9 +78,9 @@ public class CitasMedicasController {
 		return citasMedicasService.listarCentroMedicoPorNombre(nombreCentroMedico);
 	}
         
-        @GetMapping(path = "/bycedulapa/{cedula}", produces = "application/json")
-	public CitasMedicas porCedulaPa(@PathVariable String cedulapa) {
-		return citasMedicasService.listarPorPaciente(cedulapa);
+        @GetMapping(path = "/bycedulapa/{paciente}", produces = "application/json")
+	public CitasMedicas porCedulaPa(@PathVariable String paciente) {
+		return citasMedicasService.listarPorPaciente(paciente);
 	}
         
         @GetMapping(path = "/bycedulaac/{cedula}", produces = "application/json")

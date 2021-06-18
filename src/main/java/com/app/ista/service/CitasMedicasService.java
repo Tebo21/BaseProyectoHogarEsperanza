@@ -51,8 +51,8 @@ public class CitasMedicasService {
         return citasMedicasRepository.findByCentroMedico(nombreCentroMedico);
 	}
         
-        public CitasMedicas listarPorPaciente(String cedulapa){
-		return citasMedicasRepository.findByPaciente(cedulapa);
+        public CitasMedicas listarPorPaciente(String paciente){
+		return citasMedicasRepository.findByPaciente(paciente);
 	}
         
         public CitasMedicas listarPorAcompa(String cedulaacom){
