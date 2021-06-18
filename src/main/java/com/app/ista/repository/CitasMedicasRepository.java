@@ -18,4 +18,13 @@ public interface CitasMedicasRepository extends MongoRepository<CitasMedicas, Lo
     List<CitasMedicas> id();
 	
 	List<CitasMedicas> findByFechaCitaMedica(Date fechaCitaMedica);
+        
+        
+	CitasMedicas findByCentroMedico(String centroMedico);
+        
+        CitasMedicas findByPaciente(String paciente);
+        
+        CitasMedicas findByAcompaniante(String acompaniante);
+        
+        CitasMedicas findByTrabajadorFundacion(String trabajadorFundacion);
 }

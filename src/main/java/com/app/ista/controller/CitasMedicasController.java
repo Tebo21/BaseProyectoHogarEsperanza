@@ -72,4 +72,24 @@ public class CitasMedicasController {
 	public List<CitasMedicas> listarFecha(Date fechacita) {
 		return citasMedicasService.listarFecha(fechacita);
 	}
+        
+       @GetMapping(path = "/porNombre/{nombreCentroMedico}", produces = "application/json")
+	public CitasMedicas PorNombre(String nombreCentroMedico){
+		return citasMedicasService.listarCentroMedicoPorNombre(nombreCentroMedico);
+	}
+        
+        @GetMapping(path = "/bycedulapa/{cedula}", produces = "application/json")
+	public CitasMedicas porCedulaPa(@PathVariable String cedulapa) {
+		return citasMedicasService.listarPorPaciente(cedulapa);
+	}
+        
+        @GetMapping(path = "/bycedulaac/{cedula}", produces = "application/json")
+	public CitasMedicas porCedulaAc(@PathVariable String cedulaaco) {
+		return citasMedicasService.listarPorAcompa(cedulaaco);
+	}
+        
+        @GetMapping(path = "/bycedulatra/{cedula}", produces = "application/json")
+	public CitasMedicas porCedulaTra(@PathVariable String cedulatra) {
+		return citasMedicasService.listarPorTrabaja(cedulatra);
+	}
 }

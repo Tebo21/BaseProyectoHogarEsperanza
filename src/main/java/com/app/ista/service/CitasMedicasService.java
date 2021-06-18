@@ -45,5 +45,22 @@ public class CitasMedicasService {
    	public List<CitasMedicas>listarFecha(Date fecha){
 		return citasMedicasRepository.findByFechaCitaMedica(fecha);
 	}
+        
+        public CitasMedicas listarCentroMedicoPorNombre(String nombreCentroMedico) {
+		
+        return citasMedicasRepository.findByCentroMedico(nombreCentroMedico);
+	}
+        
+        public CitasMedicas listarPorPaciente(String cedulapa){
+		return citasMedicasRepository.findByPaciente(cedulapa);
+	}
+        
+        public CitasMedicas listarPorAcompa(String cedulaacom){
+		return citasMedicasRepository.findByAcompaniante(cedulaacom);
+	}
+        
+        public CitasMedicas listarPorTrabaja(String cedulatra){
+		return citasMedicasRepository.findByTrabajadorFundacion(cedulatra);
+	}
 
 }

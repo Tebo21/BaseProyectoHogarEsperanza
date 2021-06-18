@@ -62,10 +62,5 @@ public class CentroMedicoController {
 		centroMedicoService.editarCentroMedico(centroMedicoId, centro);
 		return centro;
     }
-	
-	@GetMapping(path = "/porNombre/{nombreCentroMedico}", produces = "application/json")
-	public CentroMedico PorNombre(String nombreCentroMedico){
-		return centroMedicoService.listarCentroMedicoPorNombre(nombreCentroMedico);
-	}	
 
 }

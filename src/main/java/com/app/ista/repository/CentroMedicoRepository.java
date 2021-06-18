@@ -14,5 +14,4 @@ public interface CentroMedicoRepository extends MongoRepository<CentroMedico, Lo
 	@Query(value = "{},{idCentroMedico:1}", sort = "{_id: -1}")
     List<CentroMedico> id();
 	
-	CentroMedico findByNombreCentroMedico(String nombreCentroMedico);
 }

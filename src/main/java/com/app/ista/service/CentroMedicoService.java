@@ -44,9 +44,5 @@ public class CentroMedicoService {
         return centroMedicoRepository.save(centroMedico);
 	}
 	
-	public CentroMedico listarCentroMedicoPorNombre(String nombreCentroMedico) {
-		
-        return centroMedicoRepository.findByNombreCentroMedico(nombreCentroMedico);
-	}
 
 }
