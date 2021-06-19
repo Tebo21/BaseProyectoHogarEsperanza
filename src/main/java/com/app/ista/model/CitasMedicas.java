@@ -1,7 +1,5 @@
 package com.app.ista.model;
 
-import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,8 +9,8 @@ public class CitasMedicas {
 	@Id
 	private int idCitasMedicas;
 	private String descripcionCitaMedica;
-	private Date fechaRegistro;
-	private Date fechaCitaMedica;
+	private String fechaRegistro;
+	private String fechaCitaMedica;
 	private String paciente;
 	private String acompaniante;
 	private String mensaje;
@@ -21,7 +19,7 @@ public class CitasMedicas {
 	private String especialidad;
 	private String nota;
 
-    public CitasMedicas(int idCitasMedicas, String descripcionCitaMedica, Date fechaRegistro, Date fechaCitaMedica, String paciente, String acompaniante, String mensaje, String trabajadorFundacion, String centroMedico, String especialidad, String nota) {
+    public CitasMedicas(int idCitasMedicas, String descripcionCitaMedica, String fechaRegistro, String fechaCitaMedica, String paciente, String acompaniante, String mensaje, String trabajadorFundacion, String centroMedico, String especialidad, String nota) {
         this.idCitasMedicas = idCitasMedicas;
         this.descripcionCitaMedica = descripcionCitaMedica;
         this.fechaRegistro = fechaRegistro;
@@ -51,19 +49,19 @@ public class CitasMedicas {
         this.descripcionCitaMedica = descripcionCitaMedica;
     }
 
-    public Date getFechaRegistro() {
+    public String getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(Date fechaRegistro) {
+    public void setFechaRegistro(String fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public Date getFechaCitaMedica() {
+    public String getFechaCitaMedica() {
         return fechaCitaMedica;
     }
 
-    public void setFechaCitaMedica(Date fechaCitaMedica) {
+    public void setFechaCitaMedica(String fechaCitaMedica) {
         this.fechaCitaMedica = fechaCitaMedica;
     }
 
