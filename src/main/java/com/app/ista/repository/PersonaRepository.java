@@ -10,4 +10,7 @@ public interface PersonaRepository extends MongoRepository<Persona, String>{
 	Persona findByCorreo(String correo);
 
 	Persona findByCedula(String cedula);
+	
+	Persona deleteByCedula(String cedula);
+	
 }

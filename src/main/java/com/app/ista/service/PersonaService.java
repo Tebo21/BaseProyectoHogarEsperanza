@@ -29,4 +29,9 @@ public class PersonaService {
 	public Persona porCedula(String cedula){
 		return personaRepository.findByCedula(cedula);
 	}
+	public Persona eliminarPersona(String cedula) {
+		return personaRepository.deleteByCedula(cedula);
+	}
+	
+	
 }
