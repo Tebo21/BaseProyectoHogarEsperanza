@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.ista.model.Persona;
+import com.app.ista.model.Usuarios;
 import com.app.ista.service.PersonaService;
 
 @RestController
@@ -51,4 +53,24 @@ public class PersonaController {
 	public void eliminarPersona(@PathVariable String cedula){
 		personaService.eliminarPersona(cedula);
 	}
+	
+	
+	@PutMapping("/update-persona")
+	public Persona actualizarPersona(@RequestBody Persona persona) {
+		Persona per= personaService.porCedula(persona.getCedula());
+		per.setNombres(persona.getNombres());
+		per.setApellidos(persona.getApellidos());
+		per.setDireccion(persona.getDireccion());
+		per.setCelular(persona.getCelular());
+		per.setCorreo(persona.getCorreo());
+		per.setGenero(persona.getGenero());
+		per.setFechaNacimiento(persona.getFechaNacimiento());
+		per.setEdad(persona.getEdad());
+		per.setNacionalidad(persona.getNacionalidad());
+		per.setDiscapacidad(persona.isDiscapacidad());
+		per.setEstado_civil(persona.getEstado_civil());
+		personaService.guardarPersona(per);
+		return per;
+	}
+	
 }
