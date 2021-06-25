@@ -3,7 +3,6 @@ package com.app.ista.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.ista.model.Persona;
-import com.app.ista.model.Usuarios;
 import com.app.ista.service.PersonaService;
 
 @RestController
@@ -69,8 +67,20 @@ public class PersonaController {
 		per.setNacionalidad(persona.getNacionalidad());
 		per.setDiscapacidad(persona.isDiscapacidad());
 		per.setEstado_civil(persona.getEstado_civil());
+		per.setBeneficiario(persona.isBeneficiario());
+		per.setEstadoActivo(persona.isEstadoActivo());
 		personaService.guardarPersona(per);
 		return per;
+	}
+	
+	@GetMapping(path = "/listadoBeneficiarios", produces = "application/json")
+	public List<Persona> listarBeneficiarios(@RequestParam boolean beneficiario) {
+		return personaService.findByBeneficiario(beneficiario);
+	}
+	
+	@GetMapping(path = "/listadoPersonasActivas", produces = "application/json")
+	public List<Persona> listarPersonasActivas(@RequestParam boolean estadoActivo) {
+		return personaService.findByEstadoActivo(estadoActivo);
 	}
 	
 }

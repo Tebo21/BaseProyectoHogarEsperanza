@@ -29,8 +29,17 @@ public class PersonaService {
 	public Persona porCedula(String cedula){
 		return personaRepository.findByCedula(cedula);
 	}
+	
 	public Persona eliminarPersona(String cedula) {
 		return personaRepository.deleteByCedula(cedula);
+	}
+	
+	public List<Persona> findByBeneficiario(boolean beneficiario) {
+		return personaRepository.findByBeneficiario(beneficiario);
+	}
+	
+	public List<Persona> findByEstadoActivo(boolean estadoActivo) {
+		return personaRepository.findByEstadoActivo(estadoActivo);
 	}
 	
 	

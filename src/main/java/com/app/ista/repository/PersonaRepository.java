@@ -1,5 +1,7 @@
 package com.app.ista.repository;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +15,7 @@ public interface PersonaRepository extends MongoRepository<Persona, String>{
 	
 	Persona deleteByCedula(String cedula);
 	
+	List<Persona> findByEstadoActivo(boolean estadoActivo);
+	
+	List<Persona> findByBeneficiario(boolean beneficiario);
 }
