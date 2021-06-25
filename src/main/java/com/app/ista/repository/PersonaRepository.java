@@ -15,7 +15,5 @@ public interface PersonaRepository extends MongoRepository<Persona, String>{
 	
 	Persona deleteByCedula(String cedula);
 	
-	List<Persona> findByEstadoActivo(boolean estadoActivo);
-	
-	List<Persona> findByBeneficiario(boolean beneficiario);
+	List<Persona> findByEstadoActivoAndBeneficiario(boolean estadoActivo, boolean beneficiario);
 }

@@ -73,14 +73,9 @@ public class PersonaController {
 		return per;
 	}
 	
-	@GetMapping(path = "/listadoBeneficiarios", produces = "application/json")
-	public List<Persona> listarBeneficiarios(@RequestParam boolean beneficiario) {
-		return personaService.findByBeneficiario(beneficiario);
-	}
-	
-	@GetMapping(path = "/listadoPersonasActivas", produces = "application/json")
-	public List<Persona> listarPersonasActivas(@RequestParam boolean estadoActivo) {
-		return personaService.findByEstadoActivo(estadoActivo);
+	@GetMapping(path = "/listadoBeneficiariosActivos", produces = "application/json")
+	public List<Persona> listarPorEstadoYTipo(@RequestParam boolean estadoActivo, @RequestParam boolean beneficiario) {
+		return personaService.findByEstadoAndBeneficiario(estadoActivo, beneficiario);
 	}
 	
 }

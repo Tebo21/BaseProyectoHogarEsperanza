@@ -34,13 +34,10 @@ public class PersonaService {
 		return personaRepository.deleteByCedula(cedula);
 	}
 	
-	public List<Persona> findByBeneficiario(boolean beneficiario) {
-		return personaRepository.findByBeneficiario(beneficiario);
+	public List<Persona> findByEstadoAndBeneficiario(boolean estadoActivo, boolean beneficiario) {
+		return personaRepository.findByEstadoActivoAndBeneficiario(estadoActivo, beneficiario);
 	}
-	
-	public List<Persona> findByEstadoActivo(boolean estadoActivo) {
-		return personaRepository.findByEstadoActivo(estadoActivo);
-	}
+
 	
 	
 }
