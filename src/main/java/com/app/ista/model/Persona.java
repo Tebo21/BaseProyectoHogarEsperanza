@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Persona {
 
 	@Id
+	private int idPersona;
 	private String cedula;
 	private String nombres;
 	private String apellidos;
@@ -24,6 +25,14 @@ public class Persona {
 	private boolean estadoActivo; //True cuando sigue vivo
 
 	public Persona() {
+	}
+	
+	public int getIdPersona() {
+		return idPersona;
+	}
+
+	public void setIdPersona(int idPersona) {
+		this.idPersona = idPersona;
 	}
 
 	public String getCedula() {

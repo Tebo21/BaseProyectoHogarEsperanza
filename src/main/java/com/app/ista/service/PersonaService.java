@@ -16,6 +16,15 @@ public class PersonaService {
     private PersonaRepository personaRepository;
 	
 	public Persona guardarPersona(Persona persona) {
+		if (personaRepository.findAll().isEmpty()) {
+			persona.setIdPersona(1);
+        } else {
+        	persona.setIdPersona(personaRepository.id().get(0).getIdPersona()+ 1);
+        }
+        return personaRepository.save(persona);
+	}
+	
+	public Persona guardar(Persona persona) {
         return personaRepository.save(persona);
     }
 	public List<Persona> listarPersonas() {
@@ -38,6 +47,9 @@ public class PersonaService {
 		return personaRepository.findByEstadoActivoAndBeneficiario(estadoActivo, beneficiario);
 	}
 
+	public Persona getPersonaById(int idPersona) {
+		return personaRepository.findByIdPersona(idPersona);
+	}
 	
 	
 }

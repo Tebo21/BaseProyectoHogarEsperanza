@@ -3,7 +3,6 @@ package com.app.ista.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,10 +25,10 @@ public class PersonaController {
 	@Autowired
 	PersonaService personaService;
 
-	@PostMapping(value = "/crearPersona")
-	public ResponseEntity<String> guardarPersona(@RequestBody Persona persona) {
-		personaService.guardarPersona(persona);
-		return ResponseEntity.ok("OK");
+	@PostMapping("/crearPersona")
+	public Persona guardarPersona(@RequestBody Persona persona) {
+		Persona nuevaPersona = personaService.guardarPersona(persona);
+		return nuevaPersona;
 	}
 
 	@GetMapping(path = "/listadoPersonas", produces = "application/json")
@@ -55,7 +54,7 @@ public class PersonaController {
 	
 	@PutMapping("/update-persona")
 	public Persona actualizarPersona(@RequestBody Persona persona) {
-		Persona per= personaService.porCedula(persona.getCedula());
+		Persona per= personaService.getPersonaById(persona.getIdPersona());
 		per.setNombres(persona.getNombres());
 		per.setApellidos(persona.getApellidos());
 		per.setDireccion(persona.getDireccion());
@@ -69,7 +68,7 @@ public class PersonaController {
 		per.setEstado_civil(persona.getEstado_civil());
 		per.setBeneficiario(persona.isBeneficiario());
 		per.setEstadoActivo(persona.isEstadoActivo());
-		personaService.guardarPersona(per);
+		personaService.guardar(per);
 		return per;
 	}
 	
