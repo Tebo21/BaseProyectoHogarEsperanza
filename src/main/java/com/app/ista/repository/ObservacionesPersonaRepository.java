@@ -12,5 +12,5 @@ import org.springframework.stereotype.Repository;
 public interface ObservacionesPersonaRepository extends MongoRepository<ObservacionesPersona, Long>{
     @Query(value = "{},{idObservacionesPersona:1}", sort = "{_id: -1}")
     List<ObservacionesPersona> id();
-    ObservacionesPersona findByCedulaPersona(String cedulaPersona);
+    List<ObservacionesPersona> findByCedulaPersona(String cedulaPersona);
 }

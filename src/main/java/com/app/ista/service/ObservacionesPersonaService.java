@@ -1,5 +1,7 @@
 package com.app.ista.service;
 
+import java.util.List;
+
 import com.app.ista.model.ObservacionesPersona;
 import com.app.ista.repository.ObservacionesPersonaRepository;
 
@@ -20,7 +22,7 @@ public class ObservacionesPersonaService {
         return observacionesPersonaRepository.save(observacionesPersona);
     }
 
-    public ObservacionesPersona listByCedula(String cedulaPersona){
+    public List<ObservacionesPersona> listByCedula(String cedulaPersona){
        return observacionesPersonaRepository.findByCedulaPersona(cedulaPersona);
     }
 }

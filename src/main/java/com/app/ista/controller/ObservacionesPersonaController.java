@@ -1,5 +1,7 @@
 package com.app.ista.controller;
 
+import java.util.List;
+
 import com.app.ista.model.ObservacionesPersona;
 import com.app.ista.service.ObservacionesPersonaService;
 
@@ -27,7 +29,7 @@ public class ObservacionesPersonaController {
     }
     
     @GetMapping(path = "/byCedulaObservaciones/{cedula}", produces = "application/json")
-    public ObservacionesPersona byCedulaObservaciones(@PathVariable String cedula){
+    public List<ObservacionesPersona> byCedulaObservaciones(@PathVariable String cedula){
         return observacionesPersonaService.listByCedula(cedula);
     }
 }
