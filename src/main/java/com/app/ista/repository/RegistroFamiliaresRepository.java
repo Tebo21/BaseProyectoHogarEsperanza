@@ -14,4 +14,5 @@ public interface RegistroFamiliaresRepository extends MongoRepository <RegistroF
 	@Query(value = "{},{idRegistroFamiliares:1}", sort = "{_id: -1}")
 	List<RegistroFamliares> id();
 	RegistroFamliares findByCedulaPersona(String cedulaPersona);
+	RegistroFamliares deleteByCedulaPersona(String cedulaPersona);
 }
