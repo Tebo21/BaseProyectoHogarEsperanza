@@ -22,7 +22,9 @@ public class FichaSocioeconomicaService {
         }
         return fichaSocioeconomicaRepository.save(fichaSocioeconomica);
 	}
-	
+	public FichaSocioeconomica guardar(FichaSocioeconomica fichaSocioeconomica){
+		return fichaSocioeconomicaRepository.save(fichaSocioeconomica);
+	}
 	public List<FichaSocioeconomica>listarFichas(){
 		return fichaSocioeconomicaRepository.findAll();
 	}

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,5 +37,22 @@ public class FichaSocioeconomicaController {
 	@GetMapping(path = "/bycedula/{cedula}", produces = "application/json")
 	public FichaSocioeconomica porCedula(@PathVariable String cedula) {
 		return fichaSocioeconomicaService.porCedula(cedula);
+	}
+	@PutMapping("/update-ficha")
+	public FichaSocioeconomica actualizarFicha(@RequestBody FichaSocioeconomica fichaSocioeconomica){
+		FichaSocioeconomica fichaSocial = fichaSocioeconomicaService.porCedula(fichaSocioeconomica.getCedulaPersona());
+		fichaSocial.setSituacionEconomica(fichaSocioeconomica.getSituacionEconomica());
+		fichaSocial.setTipoVivienda(fichaSocioeconomica.getTipoVivienda());
+		fichaSocial.setDescripcionVivienda(fichaSocioeconomica.getDescripcionVivienda());
+		fichaSocial.setSeguro(fichaSocioeconomica.getSeguro());
+		fichaSocial.setSalario(fichaSocioeconomica.getSalario());
+		fichaSocial.setNacionalidad(fichaSocioeconomica.getNacionalidad());
+		fichaSocial.setEstadoCivil(fichaSocioeconomica.getEstadoCivil());
+		fichaSocial.setDiscapacidad(fichaSocioeconomica.getDiscapacidad());
+		fichaSocial.setDiscapacidadDescipcion(fichaSocioeconomica.getDiscapacidadDescipcion());
+		fichaSocial.setAdultoMayor(fichaSocioeconomica.isAdultoMayor());
+		fichaSocial.setViveConOtros(fichaSocioeconomica.isViveConOtros());
+		fichaSocioeconomicaService.guardar(fichaSocial);
+		return fichaSocial;
 	}
 }
