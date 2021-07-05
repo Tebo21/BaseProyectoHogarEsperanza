@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,5 +36,13 @@ public class RegistroFamiliaresController {
 	@GetMapping(path = "/bycedula/{cedula}", produces = "application/json")
 	public RegistroFamliares porCedula(@PathVariable String cedula) {
 		return regisfamser.porCedula(cedula);
+	}
+	@PutMapping("/update-familiares")
+	public RegistroFamliares actualizarFamiliares(@RequestBody RegistroFamliares registroFamliares){
+		RegistroFamliares registroFam = regisfamser.porCedula(registroFamliares.getCedulaPersona());
+		registroFam.setNumHijos(registroFamliares.getNumHijos());
+		registroFam.setHijos(registroFamliares.getHijos());
+		regisfamser.guardar(registroFam);
+		return registroFam;
 	}
 }

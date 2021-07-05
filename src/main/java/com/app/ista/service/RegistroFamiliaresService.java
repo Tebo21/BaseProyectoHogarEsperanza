@@ -22,7 +22,9 @@ public class RegistroFamiliaresService {
 		}
 		return regisfamrepo.save(registrofamiliares);
 	}
-	
+	public RegistroFamliares guardar(RegistroFamliares registroFamliares){
+		return regisfamrepo.save(registroFamliares);
+	}
 	public List<RegistroFamliares>listadoRegistroFamiliares(){
 		return regisfamrepo.findAll();
 	}
