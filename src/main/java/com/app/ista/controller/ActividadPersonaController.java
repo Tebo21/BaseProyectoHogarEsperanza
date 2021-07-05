@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +38,12 @@ public class ActividadPersonaController {
 	public List<ActividadPersona> listarActividadesPersona() {
 		return actividadPersonaService.listarActividadesPersona();
 	}
+
+	@Async
+	public List<ActividadPersona> listarActividadesPersonaBack() {
+		return actividadPersonaService.listarActividadesPersona();
+	}
+	
 	@DeleteMapping("/eliminar/{idActividadPersona}")
     @CrossOrigin
     public void eliminar(@PathVariable int idActividadPersona) {
