@@ -38,11 +38,6 @@ public class ActividadPersonaController {
 	public List<ActividadPersona> listarActividadesPersona() {
 		return actividadPersonaService.listarActividadesPersona();
 	}
-
-	@Async
-	public List<ActividadPersona> listarActividadesPersonaBack() {
-		return actividadPersonaService.listarActividadesPersona();
-	}
 	
 	@DeleteMapping("/eliminar/{idActividadPersona}")
     @CrossOrigin
