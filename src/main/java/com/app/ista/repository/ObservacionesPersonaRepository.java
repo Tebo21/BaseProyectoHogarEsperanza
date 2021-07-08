@@ -13,4 +13,5 @@ public interface ObservacionesPersonaRepository extends MongoRepository<Observac
     @Query(value = "{},{idObservacionesPersona:1}", sort = "{_id: -1}")
     List<ObservacionesPersona> id();
     List<ObservacionesPersona> findByCedulaPersona(String cedulaPersona);
+    ObservacionesPersona findByIdObservacionesPersona(int id);
 }
