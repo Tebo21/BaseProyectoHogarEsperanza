@@ -38,7 +38,11 @@ public class PersonaController {
 
 	@GetMapping(path = "/listarPorCorreo", produces = "application/json")
 	public Persona recuperarPorCorreo(@RequestParam("correoPersona") String correoPersona ){
-		return personaService.recuperarPorCorreo(correoPersona);
+		Persona person = personaService.recuperarPorCorreo(correoPersona);
+		if(person != null) {
+			return person;
+		}
+		return new Persona();
 	}
 
 	@GetMapping(path = "/bycedula/{cedula}", produces = "application/json")
