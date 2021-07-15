@@ -26,7 +26,7 @@ public class ObservacionesPersonaService {
     public List<ObservacionesPersona> listByCedula(String cedulaPersona){
        return observacionesPersonaRepository.findByCedulaPersona(cedulaPersona);
     }
-    public ObservacionesPersona getporId( int id){
+    public ObservacionesPersona getporId(int id){
         return observacionesPersonaRepository.findByIdObservacionesPersona(id);
     }
 }
