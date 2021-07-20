@@ -20,7 +20,7 @@ import com.app.ista.service.CitasMedicasService;
 
 @RestController
 @RequestMapping("/citasMedicas")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class CitasMedicasController {
 
 	@Autowired
