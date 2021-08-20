@@ -40,7 +40,8 @@ public class FichaSocioeconomicaController {
 	}
 	@PutMapping("/update-ficha")
 	public FichaSocioeconomica actualizarFicha(@RequestBody FichaSocioeconomica fichaSocioeconomica){
-		FichaSocioeconomica fichaSocial = fichaSocioeconomicaService.porCedula(fichaSocioeconomica.getCedulaPersona());
+		FichaSocioeconomica fichaSocial = fichaSocioeconomicaService.getPersonaById(fichaSocioeconomica.getIdFichaSocioeconomica());
+		fichaSocial.setCedulaPersona(fichaSocioeconomica.getCedulaPersona());
 		fichaSocial.setSituacionEconomica(fichaSocioeconomica.getSituacionEconomica());
 		fichaSocial.setTipoVivienda(fichaSocioeconomica.getTipoVivienda());
 		fichaSocial.setDescripcionVivienda(fichaSocioeconomica.getDescripcionVivienda());

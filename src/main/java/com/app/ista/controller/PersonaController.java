@@ -59,6 +59,7 @@ public class PersonaController {
 	@PutMapping("/update-persona")
 	public Persona actualizarPersona(@RequestBody Persona persona) {
 		Persona per= personaService.getPersonaById(persona.getIdPersona());
+		per.setCedula(persona.getCedula());
 		per.setNombres(persona.getNombres());
 		per.setApellidos(persona.getApellidos());
 		per.setDireccion(persona.getDireccion());

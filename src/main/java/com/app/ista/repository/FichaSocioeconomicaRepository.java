@@ -15,4 +15,5 @@ public interface FichaSocioeconomicaRepository extends MongoRepository<FichaSoci
     List<FichaSocioeconomica> id();
     FichaSocioeconomica findByCedulaPersona(String cedulaPersona);
     FichaSocioeconomica deleteByCedulaPersona(String cedulaPersona);
+    FichaSocioeconomica findByIdFichaSocioeconomica(int idFichaSocioeconomica);
 }

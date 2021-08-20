@@ -39,7 +39,8 @@ public class RegistroFamiliaresController {
 	}
 	@PutMapping("/update-familiares")
 	public RegistroFamliares actualizarFamiliares(@RequestBody RegistroFamliares registroFamliares){
-		RegistroFamliares registroFam = regisfamser.porCedula(registroFamliares.getCedulaPersona());
+		RegistroFamliares registroFam = regisfamser.getFamiliaresById(registroFamliares.getIdRegistroFamiliares());
+		registroFam.setCedulaPersona(registroFamliares.getCedulaPersona());
 		registroFam.setNumHijos(registroFamliares.getNumHijos());
 		registroFam.setHijos(registroFamliares.getHijos());
 		regisfamser.guardar(registroFam);
