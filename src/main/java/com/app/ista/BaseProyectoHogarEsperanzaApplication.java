@@ -19,7 +19,7 @@ public class BaseProyectoHogarEsperanzaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BaseProyectoHogarEsperanzaApplication.class, args);
 	}
-	@Bean
+	/*@Bean
 	public CorsFilter corsFilter() {
 		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
@@ -33,5 +33,5 @@ public class BaseProyectoHogarEsperanzaApplication {
 		corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
-	}
+	}*/
 }
