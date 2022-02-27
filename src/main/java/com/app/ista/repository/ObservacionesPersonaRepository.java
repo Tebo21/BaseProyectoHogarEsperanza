@@ -1,12 +1,12 @@
 package com.app.ista.repository;
 
-import com.app.ista.model.ObservacionesPersona;
-
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import com.app.ista.model.ObservacionesPersona;
 
 @Repository
 public interface ObservacionesPersonaRepository extends MongoRepository<ObservacionesPersona, Integer>{

@@ -1,25 +1,22 @@
 package com.app.ista.controller;
 
+import static java.nio.file.Files.copy;
+import static java.nio.file.Paths.get;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import static org.springframework.http.HttpHeaders.CONTENT_DISPOSITION;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
-import static java.nio.file.Files.copy;
-import static org.springframework.http.HttpHeaders.CONTENT_DISPOSITION;
-import static java.nio.file.Paths.get;
 import java.util.List;
-
-import com.app.ista.model.DocumentosBeneficiario;
-import com.app.ista.service.DocumentosBeneficiarioService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
@@ -33,6 +30,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.app.ista.model.DocumentosBeneficiario;
+import com.app.ista.service.DocumentosBeneficiarioService;
 
 @RestController
 @RequestMapping("/documentosBeneficiarios")

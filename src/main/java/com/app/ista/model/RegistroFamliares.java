@@ -1,24 +1,24 @@
 package com.app.ista.model;
 
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-//Spring create a colection in MongoDB 
 @Document(collection = "registroFamiliares")
 public class RegistroFamliares {
 	@Id
 	private int idRegistroFamiliares;
-	private String cedulaPersona;
-	private int numHijos;
-	private List<Object> hijos;
 	
-	public RegistroFamliares(int idRegistroFamiliares, String cedulaPersona, int numHijos, List<Object> hijos) {
-		this.idRegistroFamiliares = idRegistroFamiliares;
-		this.cedulaPersona = cedulaPersona;
-		this.numHijos = numHijos;
-		this.hijos = hijos;
+	private String cedulaFamiliar;
+	private String cedulaPersona;
+	private String parentesco;
+	private String nombreF;
+	private String apellidoF;
+	private String celularF;
+	private String correo;
+	private int numHijos;
+	
+	public RegistroFamliares() {
+	
 	}
 
 	public int getIdRegistroFamiliares() {
@@ -29,12 +29,60 @@ public class RegistroFamliares {
 		this.idRegistroFamiliares = idRegistroFamiliares;
 	}
 
+	public String getCedulaFamiliar() {
+		return cedulaFamiliar;
+	}
+
+	public void setCedulaFamiliar(String cedulaFamiliar) {
+		this.cedulaFamiliar = cedulaFamiliar;
+	}
+
 	public String getCedulaPersona() {
 		return cedulaPersona;
 	}
 
 	public void setCedulaPersona(String cedulaPersona) {
 		this.cedulaPersona = cedulaPersona;
+	}
+
+	public String getParentesco() {
+		return parentesco;
+	}
+
+	public void setParentesco(String parentesco) {
+		this.parentesco = parentesco;
+	}
+
+	public String getNombreF() {
+		return nombreF;
+	}
+
+	public void setNombreF(String nombreF) {
+		this.nombreF = nombreF;
+	}
+
+	public String getApellidoF() {
+		return apellidoF;
+	}
+
+	public void setApellidoF(String apellidoF) {
+		this.apellidoF = apellidoF;
+	}
+
+	public String getCelularF() {
+		return celularF;
+	}
+
+	public void setCelularF(String celularF) {
+		this.celularF = celularF;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 
 	public int getNumHijos() {
@@ -44,13 +92,5 @@ public class RegistroFamliares {
 	public void setNumHijos(int numHijos) {
 		this.numHijos = numHijos;
 	}
-
-	public List<Object> getHijos() {
-		return hijos;
-	}
-
-	public void setHijos(List<Object> hijos) {
-		this.hijos = hijos;
-	}
-	
+			
 }

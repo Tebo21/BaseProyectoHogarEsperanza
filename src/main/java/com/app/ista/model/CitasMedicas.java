@@ -15,11 +15,12 @@ public class CitasMedicas {
 	private String acompaniante;
 	private String mensaje;
 	private String trabajadorFundacion;
-        private String centroMedico;
+    private String centroMedico;
 	private String especialidad;
 	private String nota;
+	private boolean asistencia;
 
-    public CitasMedicas(int idCitasMedicas, String descripcionCitaMedica, String fechaRegistro, String fechaCitaMedica, String paciente, String acompaniante, String mensaje, String trabajadorFundacion, String centroMedico, String especialidad, String nota) {
+    public CitasMedicas(int idCitasMedicas, String descripcionCitaMedica, String fechaRegistro, String fechaCitaMedica, String paciente, String acompaniante, String mensaje, String trabajadorFundacion, String centroMedico, String especialidad, String nota, boolean asistencia) {
         this.idCitasMedicas = idCitasMedicas;
         this.descripcionCitaMedica = descripcionCitaMedica;
         this.fechaRegistro = fechaRegistro;
@@ -31,6 +32,7 @@ public class CitasMedicas {
         this.centroMedico = centroMedico;
         this.especialidad = especialidad;
         this.nota = nota;
+        this.asistencia = asistencia;
     }
 
     public int getIdCitasMedicas() {
@@ -120,6 +122,13 @@ public class CitasMedicas {
     public void setNota(String nota) {
         this.nota = nota;
     }
-	
+
+	public boolean isAsistencia() {
+		return asistencia;
+	}
+
+	public void setAsistencia(boolean asistencia) {
+		this.asistencia = asistencia;
+	}
 
 }

@@ -15,13 +15,13 @@ public class ActividadPersona {
 	private String horaFin;
 	private String descripcionActividad;
 	private TipoServicio tipoActividad;
-
+	private boolean asistencia;
 
 	public ActividadPersona() {
 	}
 
 
-	public ActividadPersona(int idActividadPersona, Persona cedulaPersona, String fechaActividad, String horaInicio, String horaFin, String descripcionActividad, TipoServicio tipoActividad) {
+	public ActividadPersona(int idActividadPersona, Persona cedulaPersona, String fechaActividad, String horaInicio, String horaFin, String descripcionActividad, TipoServicio tipoActividad, boolean asistencia) {
 		this.idActividadPersona = idActividadPersona;
 		this.cedulaPersona = cedulaPersona;
 		this.fechaActividad = fechaActividad;
@@ -29,6 +29,7 @@ public class ActividadPersona {
 		this.horaFin = horaFin;
 		this.descripcionActividad = descripcionActividad;
 		this.tipoActividad = tipoActividad;
+		this.asistencia = asistencia;
 	}
 
 	public String getFechaActividad() {
@@ -90,5 +91,12 @@ public class ActividadPersona {
 		this.tipoActividad = tipoActividad;
 	}
 
+	public boolean isAsistencia() {
+		return asistencia;
+	}
 
+	public void setAsistencia(boolean asistencia) {
+		this.asistencia = asistencia;
+	}
+	
 }

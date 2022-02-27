@@ -61,6 +61,7 @@ public class CitasMedicasController {
 		cit.setCentroMedico(citadG.getCentroMedico());
 		cit.setEspecialidad(citadG.getEspecialidad());
 		cit.setNota(citadG.getNota());
+		cit.setAsistencia(citadG.isAsistencia());
 		citasMedicasService.editarCitas(citaId, cit);
 		return cit;
 	}

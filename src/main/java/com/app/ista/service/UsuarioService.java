@@ -13,8 +13,7 @@ public class UsuarioService {
 
 	@Autowired
 	private UsuariosRepository usuarioRepository;
-	
-	
+		
 	public Usuarios guardarUsuario(Usuarios usuario) {
 		if (usuarioRepository.findAll().isEmpty()) {
 			usuario.setIdUsuario(1);

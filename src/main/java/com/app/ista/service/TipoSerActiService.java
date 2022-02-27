@@ -2,11 +2,11 @@ package com.app.ista.service;
 
 import java.util.List;
 
-import com.app.ista.model.TipoServicio;
-import com.app.ista.repository.TipoSerActiRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.app.ista.model.TipoServicio;
+import com.app.ista.repository.TipoSerActiRepository;
 
 @Service
 public class TipoSerActiService {

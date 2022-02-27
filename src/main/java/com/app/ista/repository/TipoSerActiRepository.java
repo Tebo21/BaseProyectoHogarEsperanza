@@ -2,11 +2,11 @@ package com.app.ista.repository;
 
 import java.util.List;
 
-import com.app.ista.model.TipoServicio;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import com.app.ista.model.TipoServicio;
 
 @Repository
 public interface TipoSerActiRepository extends MongoRepository<TipoServicio, Integer>{

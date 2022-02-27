@@ -28,7 +28,7 @@ public class RegistroFamiliaresService {
 	public List<RegistroFamliares>listadoRegistroFamiliares(){
 		return regisfamrepo.findAll();
 	}
-	public RegistroFamliares porCedula(String cedula){
+	public List<RegistroFamliares> porCedula(String cedula){
 		return regisfamrepo.findByCedulaPersona(cedula);
 	}
 	public RegistroFamliares getFamiliaresById(int id) {

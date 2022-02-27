@@ -19,11 +19,11 @@ public class Persona {
 	private String fechaNacimiento;
 	private int edad;
 	private String nacionalidad;
-	private boolean discapacidad;
 	private String estado_civil;
 	private boolean beneficiario; //True cuando es beneficiario y false cuando es usuario
 	private boolean estadoActivo; //True cuando sigue vivo
-
+	private int faltas;
+	
 	public Persona() {
 	}
 	
@@ -115,14 +115,6 @@ public class Persona {
 		this.nacionalidad = nacionalidad;
 	}
 
-	public boolean isDiscapacidad() {
-		return discapacidad;
-	}
-
-	public void setDiscapacidad(boolean discapacidad) {
-		this.discapacidad = discapacidad;
-	}
-
 	public String getEstado_civil() {
 		return estado_civil;
 	}
@@ -145,6 +137,14 @@ public class Persona {
 
 	public void setEstadoActivo(boolean estadoActivo) {
 		this.estadoActivo = estadoActivo;
+	}
+
+	public int getFaltas() {
+		return faltas;
+	}
+
+	public void setFaltas(int faltas) {
+		this.faltas = faltas;
 	}
 
 }

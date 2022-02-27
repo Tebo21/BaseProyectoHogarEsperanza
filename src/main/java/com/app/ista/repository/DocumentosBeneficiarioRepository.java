@@ -2,11 +2,11 @@ package com.app.ista.repository;
 
 import java.util.List;
 
-import com.app.ista.model.DocumentosBeneficiario;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import com.app.ista.model.DocumentosBeneficiario;
 
 @Repository
 public interface DocumentosBeneficiarioRepository extends MongoRepository <DocumentosBeneficiario, Long> {

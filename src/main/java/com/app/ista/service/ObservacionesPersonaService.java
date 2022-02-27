@@ -2,10 +2,11 @@ package com.app.ista.service;
 
 import java.util.List;
 
-import com.app.ista.model.ObservacionesPersona;
-import com.app.ista.repository.ObservacionesPersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.app.ista.model.ObservacionesPersona;
+import com.app.ista.repository.ObservacionesPersonaRepository;
 
 @Service
 public class ObservacionesPersonaService {

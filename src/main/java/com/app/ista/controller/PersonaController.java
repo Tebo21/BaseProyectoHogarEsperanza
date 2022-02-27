@@ -14,8 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.ista.model.FichaSocioeconomica;
+import com.app.ista.model.PerRegFicDTO;
 import com.app.ista.model.Persona;
+import com.app.ista.model.RegistroFamliares;
+import com.app.ista.service.FichaSocioeconomicaService;
 import com.app.ista.service.PersonaService;
+import com.app.ista.service.RegistroFamiliaresService;
 
 @RestController
 @RequestMapping("/persona")
@@ -24,6 +29,12 @@ public class PersonaController {
 
 	@Autowired
 	PersonaService personaService;
+	@Autowired
+	RegistroFamiliaresService registrofamservice;
+	@Autowired
+	FichaSocioeconomicaService fichaservice;
+	
+	
 
 	@PostMapping("/crearPersona")
 	public Persona guardarPersona(@RequestBody Persona persona) {
@@ -31,12 +42,12 @@ public class PersonaController {
 		return nuevaPersona;
 	}
 
-	@GetMapping(path = "/listadoPersonas", produces = "application/json")
+	@GetMapping("/listadoPersonas")
 	public List<Persona> listarPersonas() {
 		return personaService.listarPersonas();
 	}
 
-	@GetMapping(path = "/listarPorCorreo", produces = "application/json")
+	@GetMapping(path = "/listarPorCorreo")
 	public Persona recuperarPorCorreo(@RequestParam("correoPersona") String correoPersona ){
 		Persona person = personaService.recuperarPorCorreo(correoPersona);
 		if(person != null) {
@@ -44,10 +55,14 @@ public class PersonaController {
 		}
 		return new Persona();
 	}
-
-	@GetMapping(path = "/bycedula/{cedula}", produces = "application/json")
-	public Persona porCedula(@PathVariable String cedula) {
-		return personaService.porCedula(cedula);
+	
+	@GetMapping("/getPersonaByCedula")
+	public Persona porCedula(@RequestParam("cedula") String cedula) {
+		Persona persona = personaService.porCedula(cedula);
+		if (persona != null) {
+			return persona;
+		}
+		return new Persona();
 	}
 	
 	@DeleteMapping("delete-persona/{cedula}")
@@ -69,17 +84,56 @@ public class PersonaController {
 		per.setFechaNacimiento(persona.getFechaNacimiento());
 		per.setEdad(persona.getEdad());
 		per.setNacionalidad(persona.getNacionalidad());
-		per.setDiscapacidad(persona.isDiscapacidad());
 		per.setEstado_civil(persona.getEstado_civil());
 		per.setBeneficiario(persona.isBeneficiario());
 		per.setEstadoActivo(persona.isEstadoActivo());
+		per.setFaltas(persona.getFaltas());
 		personaService.guardar(per);
 		return per;
 	}
 	
-	@GetMapping(path = "/listadoBeneficiariosActivos", produces = "application/json")
-	public List<Persona> listarPorEstadoYTipo(@RequestParam boolean estadoActivo, @RequestParam boolean beneficiario) {
+	@GetMapping("/listadoBeneficiariosActivos")
+	public List<Persona> listarPorEstadoYTipo(@RequestParam ("estadoActivo") boolean estadoActivo, @RequestParam ("beneficiario") boolean beneficiario) {
 		return personaService.findByEstadoAndBeneficiario(estadoActivo, beneficiario);
+	}
+	
+	@GetMapping("/getAllInfo")
+	public PerRegFicDTO getAllInfo(@RequestParam ("cedula") String cedula){
+		Persona persona = personaService.porCedula(cedula);
+		List<RegistroFamliares> familiares = registrofamservice.porCedula(cedula);
+		FichaSocioeconomica ficha = fichaservice.porCedula(cedula);
+		PerRegFicDTO respuesta = new PerRegFicDTO();
+		respuesta.setIdPerRegFicDTO(persona.getIdPersona());
+		respuesta.setCedula(persona.getCedula());
+		respuesta.setNombres(persona.getNombres());
+		respuesta.setApellidos(persona.getApellidos());
+		respuesta.setDireccion(persona.getDireccion());
+		respuesta.setCelular(persona.getCelular());
+		respuesta.setCorreo(persona.getCorreo());
+		respuesta.setGenero(persona.getGenero());
+		respuesta.setFechaNacimiento(persona.getFechaNacimiento());
+		respuesta.setEdad(persona.getEdad());
+		respuesta.setNacionalidad(persona.getNacionalidad());
+		respuesta.setEstado_civil(persona.getEstado_civil());
+		respuesta.setFaltas(persona.getFaltas());
+		respuesta.setFamiliares(familiares);
+		respuesta.setSituacionEconomica(ficha.getSituacionEconomica());
+		respuesta.setTipoVivienda(ficha.getTipoVivienda());
+		respuesta.setDescripcionVivienda(ficha.getDescripcionVivienda());
+		respuesta.setSeguro(ficha.isSeguro());
+		respuesta.setSalario(ficha.getSalario());
+		respuesta.setFechaRegistro(ficha.getFechaRegistro());
+		respuesta.setAdultoMayor(ficha.isAdultoMayor());
+		respuesta.setViveConOtros(ficha.isViveConOtros());
+		respuesta.setRecibebono(ficha.isRecibebono());
+		respuesta.setCantidadbono(ficha.getCantidadbono());
+		respuesta.setDiscapacidad(ficha.isDiscapacidad());
+		respuesta.setTipo_discapacidad(ficha.getTipo_discapacidad());
+		respuesta.setPorc_disc_mental(ficha.getPorc_disc_mental());
+		respuesta.setPorc_disc_fisica(ficha.getPorc_disc_fisica());
+		respuesta.setPareja(ficha.isPareja());
+		respuesta.setEnfermedades(ficha.getEnfermedades());
+		return respuesta;
 	}
 	
 }

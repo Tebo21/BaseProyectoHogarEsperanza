@@ -40,19 +40,24 @@ public class FichaSocioeconomicaController {
 	}
 	@PutMapping("/update-ficha")
 	public FichaSocioeconomica actualizarFicha(@RequestBody FichaSocioeconomica fichaSocioeconomica){
-		FichaSocioeconomica fichaSocial = fichaSocioeconomicaService.getPersonaById(fichaSocioeconomica.getIdFichaSocioeconomica());
+		FichaSocioeconomica fichaSocial = fichaSocioeconomicaService.buscarPorId(fichaSocioeconomica.getIdFichaSocioeconomica());
 		fichaSocial.setCedulaPersona(fichaSocioeconomica.getCedulaPersona());
 		fichaSocial.setSituacionEconomica(fichaSocioeconomica.getSituacionEconomica());
 		fichaSocial.setTipoVivienda(fichaSocioeconomica.getTipoVivienda());
 		fichaSocial.setDescripcionVivienda(fichaSocioeconomica.getDescripcionVivienda());
-		fichaSocial.setSeguro(fichaSocioeconomica.getSeguro());
+		fichaSocial.setSeguro(fichaSocioeconomica.isSeguro());
 		fichaSocial.setSalario(fichaSocioeconomica.getSalario());
-		fichaSocial.setNacionalidad(fichaSocioeconomica.getNacionalidad());
-		fichaSocial.setEstadoCivil(fichaSocioeconomica.getEstadoCivil());
-		fichaSocial.setDiscapacidad(fichaSocioeconomica.getDiscapacidad());
-		fichaSocial.setDiscapacidadDescipcion(fichaSocioeconomica.getDiscapacidadDescipcion());
+		fichaSocial.setFechaRegistro(fichaSocioeconomica.getFechaRegistro());
 		fichaSocial.setAdultoMayor(fichaSocioeconomica.isAdultoMayor());
 		fichaSocial.setViveConOtros(fichaSocioeconomica.isViveConOtros());
+		fichaSocial.setRecibebono(fichaSocioeconomica.isRecibebono());
+		fichaSocial.setCantidadbono(fichaSocioeconomica.getCantidadbono());
+		fichaSocial.setDiscapacidad(fichaSocioeconomica.isDiscapacidad());
+		fichaSocial.setTipo_discapacidad(fichaSocioeconomica.getTipo_discapacidad());
+		fichaSocial.setPorc_disc_mental(fichaSocioeconomica.getPorc_disc_mental());
+		fichaSocial.setPorc_disc_fisica(fichaSocioeconomica.getPorc_disc_fisica());
+		fichaSocial.setPareja(fichaSocial.isPareja());
+		fichaSocial.setEnfermedades(fichaSocioeconomica.getEnfermedades());
 		fichaSocioeconomicaService.guardar(fichaSocial);
 		return fichaSocial;
 	}

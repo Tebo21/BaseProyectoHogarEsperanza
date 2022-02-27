@@ -2,11 +2,11 @@ package com.app.ista.service;
 
 import java.util.List;
 
-import com.app.ista.model.DocumentosBeneficiario;
-import com.app.ista.repository.DocumentosBeneficiarioRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.app.ista.model.DocumentosBeneficiario;
+import com.app.ista.repository.DocumentosBeneficiarioRepository;
 
 @Service
 public class DocumentosBeneficiarioService {

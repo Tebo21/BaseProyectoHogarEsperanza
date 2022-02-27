@@ -31,7 +31,7 @@ public class FichaSocioeconomicaService {
 	public FichaSocioeconomica porCedula(String cedula){
 		return fichaSocioeconomicaRepository.findByCedulaPersona(cedula);
 	}
-	public FichaSocioeconomica getPersonaById(int idFichaSocioeconomica) {
+	public FichaSocioeconomica buscarPorId(int idFichaSocioeconomica) {
 		return fichaSocioeconomicaRepository.findByIdFichaSocioeconomica(idFichaSocioeconomica);
 	}
 }

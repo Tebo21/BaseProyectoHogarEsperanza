@@ -57,6 +57,7 @@ public class ActividadPersonaController {
 		Act.setHoraFin(acti.getHoraFin());
 		Act.setDescripcionActividad(acti.getDescripcionActividad());
 		Act.setTipoActividad(acti.getTipoActividad());
+		Act.setAsistencia(acti.isAsistencia());
 		actividadPersonaService.guardar(Act);
 		return Act;
 	}	
