@@ -20,21 +20,10 @@ public class CitasMedicas {
 	private String nota;
 	private boolean asistencia;
 
-    public CitasMedicas(int idCitasMedicas, String descripcionCitaMedica, String fechaRegistro, String fechaCitaMedica, String paciente, String acompaniante, String mensaje, String trabajadorFundacion, String centroMedico, String especialidad, String nota, boolean asistencia) {
-        this.idCitasMedicas = idCitasMedicas;
-        this.descripcionCitaMedica = descripcionCitaMedica;
-        this.fechaRegistro = fechaRegistro;
-        this.fechaCitaMedica = fechaCitaMedica;
-        this.paciente = paciente;
-        this.acompaniante = acompaniante;
-        this.mensaje = mensaje;
-        this.trabajadorFundacion = trabajadorFundacion;
-        this.centroMedico = centroMedico;
-        this.especialidad = especialidad;
-        this.nota = nota;
-        this.asistencia = asistencia;
-    }
-
+	public CitasMedicas() {
+		// TODO Auto-generated constructor stub
+	}
+	
     public int getIdCitasMedicas() {
         return idCitasMedicas;
     }
@@ -130,5 +119,5 @@ public class CitasMedicas {
 	public void setAsistencia(boolean asistencia) {
 		this.asistencia = asistencia;
 	}
-
+	
 }

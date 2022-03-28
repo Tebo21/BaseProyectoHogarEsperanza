@@ -22,13 +22,24 @@ public class DocumentosBeneficiarioService {
         return documentosBeneficiarioRepository.save(documentosBeneficiario);
         
     }
+    
     public DocumentosBeneficiario guardardoc(DocumentosBeneficiario documentosBeneficiario){
         return documentosBeneficiarioRepository.save(documentosBeneficiario);
     }
+    
     public List<DocumentosBeneficiario>listardoDocumetnos(){
         return documentosBeneficiarioRepository.findAll();
     }
-    public DocumentosBeneficiario porCedula(String cedula){
-        return documentosBeneficiarioRepository.findByCedulaPersona(cedula);
+    
+    public List<DocumentosBeneficiario> porCedula(String cedulaPersona){
+        return documentosBeneficiarioRepository.findByCedulaPersona(cedulaPersona);
+    }
+    
+    public DocumentosBeneficiario porId(int idDocumentos) {
+    	return documentosBeneficiarioRepository.findByIdDocumentos(idDocumentos);
+    }
+    
+    public Integer eliminarDocumento(Integer idDocumentos) {
+        return documentosBeneficiarioRepository.deleteByIdDocumentos(idDocumentos);
     }
 }

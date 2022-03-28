@@ -3,8 +3,10 @@ package com.app.ista.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,14 +26,19 @@ public class ObservacionesPersonaController {
     ObservacionesPersonaService observacionesPersonaService;
 
     @PostMapping(value = "/addobservacionesPersonas")
-    public ResponseEntity<String> guardarObservacionesPersonas(@RequestBody ObservacionesPersona observacionesPersona){
-        observacionesPersonaService.guardarObservacionesPersonas(observacionesPersona);
-        return ResponseEntity.ok("OK");
+    public ObservacionesPersona guardarObservacionesPersonas(@RequestBody ObservacionesPersona observacionesPersona){
+    	ObservacionesPersona observacionCreada = observacionesPersonaService.guardarObservacionesPersonas(observacionesPersona);
+        return observacionCreada;
     }
     
-    @GetMapping(path = "/byCedulaObservaciones/{cedula}", produces = "application/json")
-    public List<ObservacionesPersona> byCedulaObservaciones(@PathVariable String cedula){
-        return observacionesPersonaService.listByCedula(cedula);
+    @GetMapping("/getObservaciones")
+    public List<ObservacionesPersona> getObservaciones(){
+    	return observacionesPersonaService.listarObservaciones();
+    }
+    
+    @GetMapping("/byCedulaObservaciones/{cedulaPersona}")
+    public List<ObservacionesPersona> byCedulaObservaciones(@PathVariable String cedulaPersona){
+        return observacionesPersonaService.listByCedula(cedulaPersona);
     }
 
     @PutMapping("/update-Observaciones")
@@ -41,5 +48,11 @@ public class ObservacionesPersonaController {
         observacionesPersonaService.guardar(observacionesPersona2);
         return observacionesPersona2;
     }
+    
+    @DeleteMapping("/deleteObser/{idObservacionesPersona}")
+    public ResponseEntity<Integer>eliminarEmpleado(@PathVariable int idObservacionesPersona){		
+    	observacionesPersonaService.eliminarObservacion(idObservacionesPersona);	
+    	return new ResponseEntity<>(idObservacionesPersona, HttpStatus.OK);
+	}
 }
 

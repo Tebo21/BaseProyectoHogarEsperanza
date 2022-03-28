@@ -12,7 +12,6 @@ public class AsistenciaPersona {
 	private String actividad;
 	private String descripcion;
 	private String fecha;
-	private int asistencias; //Medicina, nutricion, talleres, charlas, psicologia
 	
 	public AsistenciaPersona() {
 	}
@@ -57,12 +56,4 @@ public class AsistenciaPersona {
 		this.fecha = fecha;
 	}
 
-	public int getAsistencias() {
-		return asistencias;
-	}
-
-	public void setAsistencias(int asistencias) {
-		this.asistencias = asistencias;
-	}
-	
 }

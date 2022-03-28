@@ -3,8 +3,12 @@ package com.app.ista.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,16 +26,13 @@ public class AsistenciaPersonaController {
 	AsistenciaPersonaService asistenciaservice;
 	
 	@GetMapping("/getAll-asistencia")
-	public List<AsistenciaPersona> listarAsistencias() {
+	public List<AsistenciaPersona> listarAsistencias() { 
 		return asistenciaservice.listarAsistencias();
 	}
 	
 	@GetMapping("/get-asistenciabycedula")
 	public List<AsistenciaPersona> listarAsistenciasPorCedula(@RequestParam("cedulaPersona") String cedulaPersona) {
 		List<AsistenciaPersona> asistencias = asistenciaservice.buscarPorCedula(cedulaPersona);
-		if(asistencias.size() == 0) {
-			return asistencias;
-		}
 		return asistencias;
 	}
 	
@@ -46,11 +47,16 @@ public class AsistenciaPersonaController {
 		AsistenciaPersona asistenciaAct = asistenciaservice.buscarPorIdAsistencia(asistencia.getIdAsistencia());
 		asistenciaAct.setCedulaPersona(asistencia.getCedulaPersona());
 		asistenciaAct.setActividad(asistencia.getActividad());
-		asistenciaAct.setAsistencias(asistencia.getAsistencias());
 		asistenciaAct.setDescripcion(asistencia.getDescripcion());
 		asistenciaAct.setFecha(asistencia.getFecha());
 		asistenciaservice.guardar(asistenciaAct);
 		return asistenciaAct;
+	}
+	
+	@DeleteMapping("delete-asistencia/{idAsistencia}")
+	 public ResponseEntity<Integer>eliminarAsistencia(@PathVariable int idAsistencia){
+		asistenciaservice.eliminarAsistencia(idAsistencia);	
+      return new ResponseEntity<>(idAsistencia, HttpStatus.OK);
 	}
 	
 }

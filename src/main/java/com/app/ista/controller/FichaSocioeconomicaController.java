@@ -55,8 +55,11 @@ public class FichaSocioeconomicaController {
 		fichaSocial.setDiscapacidad(fichaSocioeconomica.isDiscapacidad());
 		fichaSocial.setTipo_discapacidad(fichaSocioeconomica.getTipo_discapacidad());
 		fichaSocial.setPorc_disc_mental(fichaSocioeconomica.getPorc_disc_mental());
+		fichaSocial.setDescrip_disc_mental(fichaSocioeconomica.getDescrip_disc_mental());
 		fichaSocial.setPorc_disc_fisica(fichaSocioeconomica.getPorc_disc_fisica());
-		fichaSocial.setPareja(fichaSocial.isPareja());
+		fichaSocial.setDescrip_disc_fisica(fichaSocioeconomica.getDescrip_disc_fisica());
+		fichaSocial.setPareja(fichaSocioeconomica.isPareja());
+		fichaSocial.setMadreSoltera(fichaSocioeconomica.isMadreSoltera());
 		fichaSocial.setEnfermedades(fichaSocioeconomica.getEnfermedades());
 		fichaSocioeconomicaService.guardar(fichaSocial);
 		return fichaSocial;

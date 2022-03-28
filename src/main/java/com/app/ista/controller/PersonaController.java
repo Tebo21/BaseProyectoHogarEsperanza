@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.ista.model.AsistenciaPersona;
 import com.app.ista.model.FichaSocioeconomica;
 import com.app.ista.model.PerRegFicDTO;
 import com.app.ista.model.Persona;
 import com.app.ista.model.RegistroFamliares;
+import com.app.ista.service.AsistenciaPersonaService;
 import com.app.ista.service.FichaSocioeconomicaService;
 import com.app.ista.service.PersonaService;
 import com.app.ista.service.RegistroFamiliaresService;
@@ -33,13 +35,19 @@ public class PersonaController {
 	RegistroFamiliaresService registrofamservice;
 	@Autowired
 	FichaSocioeconomicaService fichaservice;
-	
-	
+	@Autowired
+	AsistenciaPersonaService asistenciaservice;
 
 	@PostMapping("/crearPersona")
 	public Persona guardarPersona(@RequestBody Persona persona) {
-		Persona nuevaPersona = personaService.guardarPersona(persona);
-		return nuevaPersona;
+		Persona validar = personaService.porCedula(persona.getCedula());
+		if(validar == null) {
+			Persona nuevaPersona = personaService.guardarPersona(persona);
+			System.out.println(nuevaPersona.getCedula());
+			return nuevaPersona;	
+		} else {
+			return null;
+		}
 	}
 
 	@GetMapping("/listadoPersonas")
@@ -69,7 +77,6 @@ public class PersonaController {
 	public void eliminarPersona(@PathVariable String cedula){
 		personaService.eliminarPersona(cedula);
 	}
-	
 	
 	@PutMapping("/update-persona")
 	public Persona actualizarPersona(@RequestBody Persona persona) {
@@ -102,6 +109,7 @@ public class PersonaController {
 		Persona persona = personaService.porCedula(cedula);
 		List<RegistroFamliares> familiares = registrofamservice.porCedula(cedula);
 		FichaSocioeconomica ficha = fichaservice.porCedula(cedula);
+		List<AsistenciaPersona> asistencias = asistenciaservice.buscarPorCedula(cedula);
 		PerRegFicDTO respuesta = new PerRegFicDTO();
 		respuesta.setIdPerRegFicDTO(persona.getIdPersona());
 		respuesta.setCedula(persona.getCedula());
@@ -130,9 +138,13 @@ public class PersonaController {
 		respuesta.setDiscapacidad(ficha.isDiscapacidad());
 		respuesta.setTipo_discapacidad(ficha.getTipo_discapacidad());
 		respuesta.setPorc_disc_mental(ficha.getPorc_disc_mental());
+		respuesta.setDescrip_disc_mental(ficha.getDescrip_disc_mental());
 		respuesta.setPorc_disc_fisica(ficha.getPorc_disc_fisica());
+		respuesta.setDescrip_disc_fisica(ficha.getDescrip_disc_fisica());
 		respuesta.setPareja(ficha.isPareja());
+		respuesta.setMadreSoltera(ficha.isMadreSoltera());
 		respuesta.setEnfermedades(ficha.getEnfermedades());
+		respuesta.setAsistencias(asistencias);
 		return respuesta;
 	}
 	

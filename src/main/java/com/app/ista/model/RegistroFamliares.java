@@ -1,12 +1,11 @@
 package com.app.ista.model;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "registroFamiliares")
 public class RegistroFamliares {
-	@Id
-	private int idRegistroFamiliares;
+	/*@Id
+	private int idRegistroFamiliares;*/
 	
 	private String cedulaFamiliar;
 	private String cedulaPersona;
@@ -21,13 +20,13 @@ public class RegistroFamliares {
 	
 	}
 
-	public int getIdRegistroFamiliares() {
+/*	public int getIdRegistroFamiliares() {
 		return idRegistroFamiliares;
 	}
 
 	public void setIdRegistroFamiliares(int idRegistroFamiliares) {
 		this.idRegistroFamiliares = idRegistroFamiliares;
-	}
+	} */
 
 	public String getCedulaFamiliar() {
 		return cedulaFamiliar;

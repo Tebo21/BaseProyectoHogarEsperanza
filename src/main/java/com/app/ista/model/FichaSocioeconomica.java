@@ -22,11 +22,13 @@ public class FichaSocioeconomica {
 	private boolean discapacidad;
 	private String tipo_discapacidad;
 	private int porc_disc_mental;
+	private String descrip_disc_mental;
 	private int porc_disc_fisica;
-	private boolean pareja; //Tiene pareja pero no estan casados
+	private String descrip_disc_fisica;
+	private boolean pareja; // Tiene pareja pero no estan casados
+	private boolean madreSoltera;
 	private String[] enfermedades;
-	
-	
+
 	public FichaSocioeconomica() {
 	}
 
@@ -46,51 +48,41 @@ public class FichaSocioeconomica {
 		this.cedulaPersona = cedulaPersona;
 	}
 
-
 	public String getSituacionEconomica() {
 		return situacionEconomica;
 	}
-
 
 	public void setSituacionEconomica(String situacionEconomica) {
 		this.situacionEconomica = situacionEconomica;
 	}
 
-
 	public String getTipoVivienda() {
 		return tipoVivienda;
 	}
-
 
 	public void setTipoVivienda(String tipoVivienda) {
 		this.tipoVivienda = tipoVivienda;
 	}
 
-
 	public String getDescripcionVivienda() {
 		return descripcionVivienda;
 	}
-
 
 	public void setDescripcionVivienda(String descripcionVivienda) {
 		this.descripcionVivienda = descripcionVivienda;
 	}
 
-
 	public boolean isSeguro() {
 		return seguro;
 	}
-
 
 	public void setSeguro(boolean seguro) {
 		this.seguro = seguro;
 	}
 
-
 	public double getSalario() {
 		return salario;
 	}
-
 
 	public void setSalario(double salario) {
 		this.salario = salario;
@@ -160,6 +152,14 @@ public class FichaSocioeconomica {
 		this.porc_disc_mental = porc_disc_mental;
 	}
 
+	public String getDescrip_disc_mental() {
+		return descrip_disc_mental;
+	}
+
+	public void setDescrip_disc_mental(String descrip_disc_mental) {
+		this.descrip_disc_mental = descrip_disc_mental;
+	}
+
 	public int getPorc_disc_fisica() {
 		return porc_disc_fisica;
 	}
@@ -167,13 +167,29 @@ public class FichaSocioeconomica {
 	public void setPorc_disc_fisica(int porc_disc_fisica) {
 		this.porc_disc_fisica = porc_disc_fisica;
 	}
-	
+
+	public String getDescrip_disc_fisica() {
+		return descrip_disc_fisica;
+	}
+
+	public void setDescrip_disc_fisica(String descrip_disc_fisica) {
+		this.descrip_disc_fisica = descrip_disc_fisica;
+	}
+
 	public boolean isPareja() {
 		return pareja;
 	}
 
 	public void setPareja(boolean pareja) {
 		this.pareja = pareja;
+	}
+
+	public boolean isMadreSoltera() {
+		return madreSoltera;
+	}
+
+	public void setMadreSoltera(boolean madreSoltera) {
+		this.madreSoltera = madreSoltera;
 	}
 
 	public String[] getEnfermedades() {
@@ -183,4 +199,5 @@ public class FichaSocioeconomica {
 	public void setEnfermedades(String[] enfermedades) {
 		this.enfermedades = enfermedades;
 	}
+
 }

@@ -38,4 +38,8 @@ public class AsistenciaPersonaService{
 	public AsistenciaPersona buscarPorIdAsistencia(int idAsistencia) {
 		return asistenciapersonarepository.findByIdAsistencia(idAsistencia);
 	}
+	
+	public Integer eliminarAsistencia(Integer idAsistencia) {
+		return asistenciapersonarepository.deleteByIdAsistencia(idAsistencia);
+	}
 }

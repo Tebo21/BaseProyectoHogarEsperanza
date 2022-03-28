@@ -38,9 +38,14 @@ public class PerRegFicDTO{
 	private boolean discapacidad;
 	private String tipo_discapacidad;
 	private int porc_disc_mental;
+	private String descrip_disc_mental;
 	private int porc_disc_fisica;
+	private String descrip_disc_fisica;
 	private boolean pareja;
+	private boolean madreSoltera;
 	private String[] enfermedades;
+	//Asistencias
+	private List<AsistenciaPersona> asistencias;
 	
 	public PerRegFicDTO() {}
 
@@ -267,6 +272,14 @@ public class PerRegFicDTO{
 	public void setPorc_disc_mental(int porc_disc_mental) {
 		this.porc_disc_mental = porc_disc_mental;
 	}
+	
+	public String getDescrip_disc_mental() {
+		return descrip_disc_mental;
+	}
+
+	public void setDescrip_disc_mental(String descrip_disc_mental) {
+		this.descrip_disc_mental = descrip_disc_mental;
+	}
 
 	public int getPorc_disc_fisica() {
 		return porc_disc_fisica;
@@ -276,12 +289,36 @@ public class PerRegFicDTO{
 		this.porc_disc_fisica = porc_disc_fisica;
 	}
 
+	public String getDescrip_disc_fisica() {
+		return descrip_disc_fisica;
+	}
+
+	public void setDescrip_disc_fisica(String descrip_disc_fisica) {
+		this.descrip_disc_fisica = descrip_disc_fisica;
+	}
+
+	public boolean isMadreSoltera() {
+		return madreSoltera;
+	}
+
+	public void setMadreSoltera(boolean madreSoltera) {
+		this.madreSoltera = madreSoltera;
+	}
+
 	public String[] getEnfermedades() {
 		return enfermedades;
 	}
 
 	public void setEnfermedades(String[] enfermedades) {
 		this.enfermedades = enfermedades;
+	}
+
+	public List<AsistenciaPersona> getAsistencias() {
+		return asistencias;
+	}
+
+	public void setAsistencias(List<AsistenciaPersona> asistencias) {
+		this.asistencias = asistencias;
 	}
 	
 }

@@ -30,4 +30,10 @@ public class ObservacionesPersonaService {
     public ObservacionesPersona getporId(int id){
         return observacionesPersonaRepository.findByIdObservacionesPersona(id);
     }
+    public List<ObservacionesPersona> listarObservaciones(){
+    	return observacionesPersonaRepository.findAll();
+    }
+    public Integer eliminarObservacion(Integer idObservacionesPersona) {
+    	return observacionesPersonaRepository.deleteByIdObservacionesPersona(idObservacionesPersona);
+    }
 }
